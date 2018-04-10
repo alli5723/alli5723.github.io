@@ -49,7 +49,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "DressCode",
     "sampleRequest": [
       {
@@ -99,7 +99,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "DressCode",
     "sampleRequest": [
       {
@@ -156,7 +156,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "DressCode",
     "sampleRequest": [
       {
@@ -221,7 +221,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "DressCode",
     "sampleRequest": [
       {
@@ -272,7 +272,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "DressCode",
     "sampleRequest": [
       {
@@ -312,13 +312,13 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"plannerId\": \"21regvjskdu85439w-qed\"\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"location\": {          \n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"plannerId\": \"21regvjskdu85439w-qed\"\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"location\": {\n         \"id\": \"5aca7a297948b76868dde727\",\n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n         \"extra\": \"extras\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Titilope Morolari\",\n         \"phone\": \"+23470676152\",\n         \"email\": \"tmorolari@gmail.com\"\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Events",
     "sampleRequest": [
       {
@@ -368,7 +368,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Events",
     "sampleRequest": [
       {
@@ -419,7 +419,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Events",
     "sampleRequest": [
       {
@@ -444,7 +444,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Events",
     "sampleRequest": [
       {
@@ -482,7 +482,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Events",
     "sampleRequest": [
       {
@@ -540,7 +540,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Events",
     "sampleRequest": [
       {
@@ -583,7 +583,7 @@
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n     \"giftName\": \"Gift name\",\n     \"giftUrl\": \"Image url\"\n }",
+          "content": "[\n      {\n         \"giftName\": \"Gift 1\",\n         \"giftUrl\": \"Image url\"\n     },\n     {\n         \"giftName\": \"Gift 2\",\n         \"giftUrl\": \"Image url\"\n     }\n]",
           "type": "json"
         }
       ]
@@ -592,13 +592,13 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"giftName\": \"First Planned Event\",\n     \"giftUrl\": \"http://hdvckpc.sdinv.com/pilskmvik/pojklmcvhj/pofdshk.png\"\n }",
+          "content": "[\n     {\n         \"id\": \"5aca9d9b7948b735c0bb692c\",\n         \"giftUrl\": \"Image url\",\n         \"giftName\": \"Gift 1\"\n     },\n     {\n         \"id\": \"5aca9d9c7948b735c0bb692d\",\n         \"giftUrl\": \"Image url\",\n         \"giftName\": \"Gift 2\"\n     }\n]",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Gift",
     "sampleRequest": [
       {
@@ -648,7 +648,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Gift",
     "sampleRequest": [
       {
@@ -705,7 +705,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Gift",
     "sampleRequest": [
       {
@@ -770,7 +770,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Gift",
     "sampleRequest": [
       {
@@ -821,7 +821,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Gift",
     "sampleRequest": [
       {
@@ -867,7 +867,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
     "groupTitle": "Guest",
     "sampleRequest": [
       {
@@ -877,7 +877,7 @@
   },
   {
     "type": "put",
-    "url": "/guest",
+    "url": "/guests",
     "title": "Create New Guest",
     "name": "CreateGuest",
     "group": "Guest",
@@ -913,17 +913,17 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
     "groupTitle": "Guest",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/guest"
+        "url": "https://mxevent.herokuapp.com/guests"
       }
     ]
   },
   {
     "type": "delete",
-    "url": "/planner",
+    "url": "/guests",
     "title": "Delete Guest",
     "name": "DeleteGuest",
     "group": "Guest",
@@ -950,11 +950,11 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
     "groupTitle": "Guest",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/planner"
+        "url": "https://mxevent.herokuapp.com/guests"
       }
     ]
   },
@@ -988,7 +988,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
     "groupTitle": "Guest",
     "sampleRequest": [
       {
@@ -998,7 +998,7 @@
   },
   {
     "type": "get",
-    "url": "/guest/invitation",
+    "url": "/guests/invitation",
     "title": "Guest Invitations",
     "name": "ListGuestInvites",
     "group": "Guest",
@@ -1026,17 +1026,17 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
     "groupTitle": "Guest",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/guest/invitation"
+        "url": "https://mxevent.herokuapp.com/guests/invitation"
       }
     ]
   },
   {
     "type": "get",
-    "url": "/guest/{id}",
+    "url": "/guests/{id}",
     "title": "View guest details",
     "name": "ViewGuest",
     "group": "Guest",
@@ -1077,11 +1077,11 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
     "groupTitle": "Guest",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/guest/{id}"
+        "url": "https://mxevent.herokuapp.com/guests/{id}"
       }
     ]
   },
@@ -1142,7 +1142,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
     "groupTitle": "Invitations",
     "sampleRequest": [
       {
@@ -1207,7 +1207,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
     "groupTitle": "Invitations",
     "sampleRequest": [
       {
@@ -1245,7 +1245,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
     "groupTitle": "Invitations",
     "sampleRequest": [
       {
@@ -1269,7 +1269,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
     "groupTitle": "Invitations",
     "sampleRequest": [
       {
@@ -1306,7 +1306,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
     "groupTitle": "Invitations",
     "sampleRequest": [
       {
@@ -1343,7 +1343,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
     "groupTitle": "Invitations",
     "sampleRequest": [
       {
@@ -1380,7 +1380,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
     "groupTitle": "Invitations",
     "sampleRequest": [
       {
@@ -1438,7 +1438,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Meal",
     "sampleRequest": [
       {
@@ -1488,7 +1488,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Meal",
     "sampleRequest": [
       {
@@ -1545,7 +1545,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Meal",
     "sampleRequest": [
       {
@@ -1610,7 +1610,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Meal",
     "sampleRequest": [
       {
@@ -1661,7 +1661,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Meal",
     "sampleRequest": [
       {
@@ -1707,7 +1707,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/PlannerController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/PlannerController.java",
     "groupTitle": "Planner",
     "sampleRequest": [
       {
@@ -1744,7 +1744,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/PlannerController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/PlannerController.java",
     "groupTitle": "Planner",
     "sampleRequest": [
       {
@@ -1790,7 +1790,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/PlannerController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/PlannerController.java",
     "groupTitle": "Planner",
     "sampleRequest": [
       {
@@ -1843,7 +1843,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/PlannerController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/PlannerController.java",
     "groupTitle": "Planner",
     "sampleRequest": [
       {
@@ -1886,7 +1886,7 @@
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n    \"title\": \"Programme name\",\n    \"time\": \"10:15\"\n}",
+          "content": "[\n {\n     \"title\": \"Programme name\",\n     \"time\": \"10:15\"\n },\n ...\n]",
           "type": "json"
         }
       ]
@@ -1895,13 +1895,13 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"title\": \"Programme name\",\n     \"time\": \"10:15\"\n }",
+          "content": "[\n {\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"title\": \"Programme name\",\n     \"time\": \"10:15\"\n },\n ...\n]",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Programme",
     "sampleRequest": [
       {
@@ -1951,7 +1951,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Programme",
     "sampleRequest": [
       {
@@ -2008,7 +2008,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Programme",
     "sampleRequest": [
       {
@@ -2073,7 +2073,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Programme",
     "sampleRequest": [
       {
@@ -2118,13 +2118,13 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "[\n     {\n         \"id\": \"5aaa41c8b854660004011b60\",\n         \"title\": \"Programme name\",\n         \"time\": \"10:15\"\n     },\n     ...\n     {\n         \"id\": \"5a9af73990326a3743aa9f05\",\n         \"title\": \"Programme name\",\n         \"time\": \"10:15\"\n }\n ]",
+          "content": "[\n     {\n         \"id\": \"5aaa41c8b854660004011b60\",\n         \"title\": \"Programme name\",\n         \"time\": \"10:15\"\n     },\n     ...\n     {\n         \"id\": \"5a9af73990326a3743aa9f05\",\n         \"title\": \"Programme name\",\n         \"time\": \"10:15\"\n     }\n ]",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Programme",
     "sampleRequest": [
       {
@@ -2170,7 +2170,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/VendorController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/VendorController.java",
     "groupTitle": "Vendor",
     "sampleRequest": [
       {
@@ -2207,7 +2207,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/VendorController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/VendorController.java",
     "groupTitle": "Vendor",
     "sampleRequest": [
       {
@@ -2253,7 +2253,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/VendorController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/VendorController.java",
     "groupTitle": "Vendor",
     "sampleRequest": [
       {
@@ -2306,7 +2306,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "C:/Users/tmoro/Project/event_api/src/main/java/com/mx/eventapi/web/rest/VendorController.java",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/VendorController.java",
     "groupTitle": "Vendor",
     "sampleRequest": [
       {
