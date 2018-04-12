@@ -34,7 +34,7 @@
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n    \"dressName\": \"DressCode name\",\n    \"color1\": \"Rose\",\n    \"color2\": \"Gold\"\n}",
+          "content": "[\n    {\n        \"dressName\": \"DressCode name\",\n        \"color1\": \"Rose\",\n        \"color2\": \"Gold\"\n    },\n    ...\n]",
           "type": "json"
         }
       ]
@@ -43,7 +43,47 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"dressName\": \"DressCode name\",\n     \"color1\": \"Rose\",\n     \"color2\": \"Gold\"\n }",
+          "content": "[\n     {\n         \"id\": \"5aaa41c8b854660004011b60\",\n         \"dressName\": \"DressCode name\",\n         \"color1\": \"Rose\",\n         \"color2\": \"Gold\"\n     },\n     ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/{event_id}/dress-code\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n {\n     \"detail: \"New meal cannot already have an ID\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -166,7 +206,7 @@
   },
   {
     "type": "put",
-    "url": "/events/{event_id}/dress-code/{dress_code_id}",
+    "url": "/events/{event_id}/dress-code",
     "title": "Edit/Update Dress Code Entity.",
     "name": "EditDressCode",
     "group": "DressCode",
@@ -193,20 +233,43 @@
             "optional": false,
             "field": "event_id",
             "description": "<p>Event unique ID.</p>"
-          },
+          }
+        ],
+        "Parameters": [
           {
-            "group": "Path Variable",
+            "group": "Parameters",
             "type": "String",
             "optional": false,
-            "field": "dress_code_id",
+            "field": "id",
             "description": "<p>DressCode unique ID.</p>"
+          },
+          {
+            "group": "Parameters",
+            "type": "String",
+            "optional": true,
+            "field": "dressName",
+            "description": "<p>DressCode unique ID.</p>"
+          },
+          {
+            "group": "Parameters",
+            "type": "String",
+            "optional": true,
+            "field": "color1",
+            "description": ""
+          },
+          {
+            "group": "Parameters",
+            "type": "String",
+            "optional": true,
+            "field": "color2",
+            "description": ""
           }
         ]
       },
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n    \"dressName\": \"DressCode name\",\n    \"color1\": \"Rose\",\n    \"color2\": \"Gold\"\n}",
+          "content": "{\n    \"id\": \"5aaa41c8b854660004011b60\",\n    \"dressName\": \"DressCode name\",\n    \"color1\": \"Rose\",\n    \"color2\": \"Gold\"\n}",
           "type": "json"
         }
       ]
@@ -220,12 +283,52 @@
         }
       ]
     },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/{event_id}/programme\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n {\n     \"detail: \"Must specify the DressCode ID in has a parameter\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
+          "type": "json"
+        }
+      ]
+    },
     "version": "0.0.0",
     "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "DressCode",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/events/{event_id}/dress-code/{dress_code_id}"
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/dress-code"
       }
     ]
   },
@@ -303,7 +406,7 @@
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"location\": {          \n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n         \"extra\", \"extras\"\n     },\n     \"image\":{\n         \"name\": \"Image Name\"\n         \"url\": \"Image url\"\n     },\n     \"open\" : \"0\",\n     \"published\" : 0,\n     \"maxInvite\": 100,\n }",
+          "content": "{\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"locations\":[\n         {\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"open\" : \"0\",\n     \"published\" : 0,\n     \"maxInvite\": 100\n }",
           "type": "json"
         }
       ]
@@ -312,7 +415,47 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"plannerId\": \"21regvjskdu85439w-qed\"\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"location\": {\n         \"id\": \"5aca7a297948b76868dde727\",\n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n         \"extra\": \"extras\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Titilope Morolari\",\n         \"phone\": \"+23470676152\",\n         \"email\": \"tmorolari@gmail.com\"\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Titilope Morolari\",\n         \"phone\": \"+23470676152\",\n         \"email\": \"tmorolari@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n {\n     \"detail: \"New event cannot already have an ID\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -367,6 +510,41 @@
         }
       ]
     },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/5acd58af2ac649498c5c4d86\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
+          "type": "json"
+        }
+      ]
+    },
     "version": "0.0.0",
     "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Events",
@@ -413,7 +591,42 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"location\": {          \n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100,\n     gifts:[\n         {\n             \"id\": \"5aaa41c8b854660004011b60\",\n             \"giftName\": \"First Planned Event\",\n             \"giftUrl\": \"http://hdvckpc.sdinv.com/pilskmvik/pojklmcvhj/pofdshk.png\"\n         }\n         ...\n     ],\n     programmes:[...],\n     meals:[...],\n     dressCodes:[...]\n }",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n         },\n         ...\n     ],\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100,\n     gifts:[\n         {\n             \"id\": \"5aaa41c8b854660004011b60\",\n             \"giftName\": \"First Planned Event\",\n             \"giftUrl\": \"http://hdvckpc.sdinv.com/pilskmvik/pojklmcvhj/pofdshk.png\"\n         }\n         ...\n     ],\n     programmes:[...],\n     meals:[...],\n     dressCodes:[...]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/5acd58af2ac649498c5c4d86\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -439,6 +652,41 @@
         {
           "title": "Response:",
           "content": "[\n{\n     \"id\": \"5a9af36690326a363e622402\",\n\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted and editted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"location\": {          \n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n },\n...\n{\n     \"id\": \"5a9af73990326a3743aa9f05\",\n\n     \"name\": \"Second Planned Event\",\n     \"details\": \"This is the second Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"location\": {          \n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n     },\n     \"open\": 1,\n     \"published\": 0,\n     \"maxInvite\": 100\n }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/invitations/events/5acd58af2ac649498c5c4d86\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -476,7 +724,42 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "[\n {\n     \"id\": \"5a9af36690326a363e622402\",\n\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted and editted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"location\": {          \n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n },\n ...\n {\n     \"id\": \"5a9af73990326a3743aa9f05\",\n\n     \"name\": \"Second Planned Event\",\n     \"details\": \"This is the second Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"location\": {          \n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n     },\n     \"open\": 1,\n     \"published\": 0,\n     \"maxInvite\": 100\n }\n]",
+          "content": "[\n {\n     \"id\": \"5a9af36690326a363e622402\",\n\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted and editted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Titilope Morolari\",\n         \"phone\": \"+23470676152\",\n         \"email\": \"tmorolari@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n },\n ...\n {\n     \"id\": \"5a9af73990326a3743aa9f05\",\n\n     \"name\": \"Second Planned Event\",\n     \"details\": \"This is the second Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Titilope Morolari\",\n         \"phone\": \"+23470676152\",\n         \"email\": \"tmorolari@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 1,\n     \"published\": 0,\n     \"maxInvite\": 100\n }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -496,7 +779,7 @@
     "title": "Update Event details",
     "name": "UpdateEvent",
     "group": "Events",
-    "description": "<p>This endpoint should only be called with the Planner's authorization token</p>",
+    "description": "<p>Edit/Update the event for the planner with current authorization token. Location id is optional, if the id is specified it updates the location else a new location is created.This endpoint should only be called with the Planner's authorization token</p>",
     "header": {
       "fields": {
         "Request Header": [
@@ -512,9 +795,9 @@
     },
     "parameter": {
       "fields": {
-        "Path Variable": [
+        "Parameters": [
           {
-            "group": "Path Variable",
+            "group": "Parameters",
             "type": "String",
             "optional": false,
             "field": "id",
@@ -525,7 +808,7 @@
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"location\": {          \n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n     },\n     \"image\":{\n         \"name\": \"Image Name\"\n         \"url\": \"Image url\"\n     },\n     \"open\" : \"0\",\n\n     \"published\" : \"0\",\n     \"maxInvite\": 100\n }",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\", // Required\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",  // Optional\n             \"name\": \"New Main Building\",\n             \"address\": \"35, Ulikooli Tn\",\n         },\n         ...\n     ],\n     \"image\":{\n         \"name\": \"Image Name\"\n         \"url\": \"Image url\"\n     },\n     \"open\" : 0,\n     \"published\" : 1,\n     \"maxInvite\": 100\n }",
           "type": "json"
         }
       ]
@@ -534,7 +817,42 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"location\": {          \n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"location\": {          \n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n     },\n     \"open\": 0,\n     \"published\": 1,\n     \"maxInvite\": 100,\n     gifts:[\n         {\n             \"id\": \"5aaa41c8b854660004011b60\",\n             \"giftName\": \"First Planned Event\",\n             \"giftUrl\": \"http://hdvckpc.sdinv.com/pilskmvik/pojklmcvhj/pofdshk.png\"\n         }\n         ...\n     ],\n     programmes:[...],\n     meals:[...],\n     dressCodes:[...]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -545,6 +863,173 @@
     "sampleRequest": [
       {
         "url": "https://mxevent.herokuapp.com/events"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/gatekeeper/guests/checked-in",
+    "title": "Check-in Guest",
+    "name": "CheckinGuest",
+    "group": "GateKeeper",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>This endpoint is to be used to signify a guests interest in attending or not attending an event. 0 Signifies not attending and 1 signifies attending.</p>",
+    "parameter": {
+      "fields": {
+        "Parameters": [
+          {
+            "group": "Parameters",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Invitation ID</p>"
+          },
+          {
+            "group": "Parameters",
+            "type": "String",
+            "optional": false,
+            "field": "rsvp",
+            "description": "<p>Values YES, NO, MAYBE</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Body:",
+          "content": "{\n     \"id\": \"5aaa51764ffaf84b7438010f\",\n     \"rsvp\": \"CHECKED_IN\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "{\n    \"id\": \"5aaa51764ffaf84b7438010f\",\n    \"guest\": {\n        \"id\": \"5acd2d2c70830d33e80f7478\",\n        \"name\": \"French Montana\",\n        \"phone\": \"+234098776352\",\n        \"email\": \"french.montana@gmail.com\"\n    },\n    \"event\": {\n        \"id\": \"5acd58af2ac649498c5c4d86\",\n        \"name\": \"First Planned Event\",\n        \"details\": \"This is the first Event I inserted into the Database\"\n    },\n    \"rsvp\": \"CHECKED_IN\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GateKeeperController.java",
+    "groupTitle": "GateKeeper",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/gatekeeper/guests/checked-in"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/gatekeeper/event/{event_id}/guests",
+    "title": "View all Guest",
+    "name": "GetGuestList",
+    "group": "GateKeeper",
+    "description": "<p>Get the guest list for an event</p>",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Path Variables": [
+          {
+            "group": "Path Variables",
+            "type": "String",
+            "optional": false,
+            "field": "event_id",
+            "description": "<p>Event ID     *</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "[\n     {\n         \"id\": \"5aaf62b84ffaf87e05dada37\",\n         \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\",\n         \"firstName\": \"first\",\n         \"lastName\": \"last\",\n         \"email\": \"planner@example.com\"\n         \"phone\" : \"+1234567890\",\n         \"roles\": [\n             {\n                 name: \"ROLE_USER\"\n             },\n             ...\n             {\n              name: \"ROLE_GUEST\"\n             }\n          ]\n     }\n     ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GateKeeperController.java",
+    "groupTitle": "GateKeeper",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/gatekeeper/event/{event_id}/guests"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/gatekeepers/event/{event_id}",
+    "title": "Get Event for an Invite",
+    "name": "InviteEvent",
+    "group": "GateKeeper",
+    "description": "<p>Gets the details of the event.</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Path Variables": [
+          {
+            "group": "Path Variables",
+            "type": "String",
+            "optional": false,
+            "field": "event_id",
+            "description": "<p>Event ID</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"location\": {\n         \"id\": \"5aca7a297948b76868dde727\",\n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n         \"extra\": \"extras\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Titilope Morolari\",\n         \"phone\": \"+23470676152\",\n         \"email\": \"tmorolari@gmail.com\"\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GateKeeperController.java",
+    "groupTitle": "GateKeeper",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/gatekeepers/event/{event_id}"
       }
     ]
   },
@@ -593,6 +1078,46 @@
         {
           "title": "Response:",
           "content": "[\n     {\n         \"id\": \"5aca9d9b7948b735c0bb692c\",\n         \"giftUrl\": \"Image url\",\n         \"giftName\": \"Gift 1\"\n     },\n     {\n         \"id\": \"5aca9d9c7948b735c0bb692d\",\n         \"giftUrl\": \"Image url\",\n         \"giftName\": \"Gift 2\"\n     }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/{event_id}/gifts\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n {\n     \"detail: \"New gift cannot already have an ID\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -715,7 +1240,7 @@
   },
   {
     "type": "put",
-    "url": "/events/{event_id}/gifts/{gift_id}",
+    "url": "/events/{event_id}/gifts",
     "title": "Edit/Update Gift Entity.",
     "name": "EditGift",
     "group": "Gift",
@@ -742,20 +1267,13 @@
             "optional": false,
             "field": "event_id",
             "description": "<p>Event unique ID.</p>"
-          },
-          {
-            "group": "Path Variable",
-            "type": "String",
-            "optional": false,
-            "field": "gift_id",
-            "description": "<p>Gift unique ID.</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n     \"giftName\": \"Image Name\",\n     \"giftUrl\": \"Image url\"\n }",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"giftName\": \"New Image Name\",\n     \"giftUrl\": \"New Image url\"\n }",
           "type": "json"
         }
       ]
@@ -764,7 +1282,47 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"giftName\": \"First Planned Event\",\n     \"giftUrl\": \"This is the first Event I inserted into the Database\"\n }",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"giftName\": \"New Image Name\",\n     \"giftUrl\": \"New Image url\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/{event_id}/gifts\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n {\n     \"detail: \"Must specify the Gift ID in has a parameter\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -774,7 +1332,7 @@
     "groupTitle": "Gift",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/events/{event_id}/gifts/{gift_id}"
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/gifts"
       }
     ]
   },
@@ -830,52 +1388,6 @@
     ]
   },
   {
-    "type": "post",
-    "url": "/guests",
-    "title": "Create New Guest",
-    "name": "CreateGuest",
-    "group": "Guest",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>Authorization token from firebase authentication.</p>"
-          }
-        ]
-      }
-    },
-    "parameter": {
-      "examples": [
-        {
-          "title": "Body:",
-          "content": "{\n    \"firstName\": \"New\",\n    \"lastName\": \"York\",\n    \"phoneNumber\": \"56781061\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Response:",
-          "content": "{\n      \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\"\n }",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
-    "groupTitle": "Guest",
-    "sampleRequest": [
-      {
-        "url": "https://mxevent.herokuapp.com/guests"
-      }
-    ]
-  },
-  {
     "type": "put",
     "url": "/guests",
     "title": "Create New Guest",
@@ -908,6 +1420,52 @@
         {
           "title": "Response:",
           "content": "{\n\"id\": \"5aaa4795b854660004011b61\",\n\"firstName\": \"New\",\n\"lastName\": \"York\",\n\"phoneNumber\": \"56781061\",\n\"email\": \"olamide@gmail.com\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "groupTitle": "Guest",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/guests"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/guests",
+    "title": "Create New Guest",
+    "name": "CreateGuest",
+    "group": "Guest",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "examples": [
+        {
+          "title": "Body:",
+          "content": "{\n    \"firstName\": \"New\",\n    \"lastName\": \"York\",\n    \"phoneNumber\": \"56781061\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "{\n      \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\"\n }",
           "type": "json"
         }
       ]
@@ -959,12 +1517,25 @@
     ]
   },
   {
-    "type": "get",
-    "url": "/guest/list",
-    "title": "List all guests",
-    "name": "ListGuest",
+    "type": "put",
+    "url": "/guests/invitations/gift",
+    "title": "Update Gift interest for Event",
+    "name": "GuestGiftInterest",
     "group": "Guest",
-    "description": "<p>This endpoint belongs to an admin user TBD</p>",
+    "description": "<p>A guest indicates interest in selecting a gift. The gift must exists shared in event get guest is invited to.</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -972,17 +1543,66 @@
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "id",
-            "description": "<p>guest unique ID.</p>"
+            "field": "inviteId",
+            "description": "<p>Invitation ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "giftId",
+            "description": "<p>Gift ID</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Body:",
+          "content": "{\n     \"inviteId\": \"5acd6a112ac649312037137f\",\n     \"giftId\": \"5aaa41c8b854660004011b60\",\n}",
+          "type": "json"
+        }
+      ]
     },
     "success": {
       "examples": [
         {
           "title": "Response:",
-          "content": "[{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"accountId\": null\n },\n ...\n{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"accountId\": null\n }]",
+          "content": "\n{\n    \"id\": \"5acd6a112ac649312037137f\",\n    \"guest\": {\n        \"id\": \"5acd5fbf2ac6493120371379\",\n        \"name\": \"Barry Allen\",\n        \"phone\": \"+123456789093\",\n        \"email\": \"barry.allen@gmail.com\"\n    },\n    \"event\": {\n        \"id\": \"5acd58af2ac649498c5c4d86\",\n        \"name\": \"First Planned Event\",\n        \"details\": \"This is the first Event I inserted into the Database\"\n    },\n    \"gifts\":[\n        {\n            \"id\": \"5aaa41c8b854660004011b60\",\n            \"giftName\": \"New Image Name\",\n            \"giftUrl\": \"New Image url\"\n        },\n        ...\n    ],\n    \"meals\": [\n        {\n            \"id\": \"5aaa41c8bwefffffd3434344\",\n            \"type\": \"type1\",\n            \"meal_name\": \"name1\",\n            \"interest\": \"interest1\"\n        },\n        ...\n    ],\n    \"rsvp\": \"YES\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/{event_id}/meal\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n    {\n        \"detail\": \"Gift with id {gift_id} does not exists for this event\"\n    }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail\": \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -992,14 +1612,165 @@
     "groupTitle": "Guest",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/guest/list"
+        "url": "https://mxevent.herokuapp.com/guests/invitations/gift"
       }
     ]
   },
   {
     "type": "get",
-    "url": "/guests/invitation",
-    "title": "Guest Invitations",
+    "url": "/guests/invitations/{invite_id}/event",
+    "title": "Get Event for an Invite",
+    "name": "GuestInviteEvent",
+    "group": "Guest",
+    "description": "<p>Gets the details of the event a guest is invited to.</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Path Variables": [
+          {
+            "group": "Path Variables",
+            "type": "String",
+            "optional": false,
+            "field": "invite_id",
+            "description": "<p>Invitation ID</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"location\": {\n         \"id\": \"5aca7a297948b76868dde727\",\n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n         \"extra\": \"extras\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Titilope Morolari\",\n         \"phone\": \"+23470676152\",\n         \"email\": \"tmorolari@gmail.com\"\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "groupTitle": "Guest",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/guests/invitations/{invite_id}/event"
+      }
+    ]
+  },
+  {
+    "type": "put",
+    "url": "/guests/invitations/meal",
+    "title": "Update Meal interest for Event",
+    "name": "GuestMealInterest",
+    "group": "Guest",
+    "description": "<p>A guest indicates interest in selecting a meal. The meal must be served in event get guest is invited to.</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "inviteId",
+            "description": "<p>Invitation ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "mealId",
+            "description": "<p>Meal ID</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Body:",
+          "content": "{\n     \"inviteId\": \"5acd6a112ac649312037137f\",\n     \"mealId\": \"5aaa41c8bwefffffd3434344\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "\n{\n    \"id\": \"5acd6a112ac649312037137f\",\n    \"guest\": {\n        \"id\": \"5acd5fbf2ac6493120371379\",\n        \"name\": \"Barry Allen\",\n        \"phone\": \"+123456789093\",\n        \"email\": \"barry.allen@gmail.com\"\n    },\n    \"event\": {\n        \"id\": \"5acd58af2ac649498c5c4d86\",\n        \"name\": \"First Planned Event\",\n        \"details\": \"This is the first Event I inserted into the Database\"\n    },\n    \"gifts\": [\n        {\n            \"id\": \"5aaa41c8b854660004011b60\",\n            \"giftName\": \"New Image Name\",\n            \"giftUrl\": \"New Image url\"\n        },\n        ...\n    ],\n    \"meals\": [\n        {\n            \"id\": \"5aaa41c8bwefffffd3434344\",\n            \"type\": \"type0\",\n            \"meal_name\": \"name0\",\n            \"interest\": \"interest0\"\n        },\n        ...\n    ],\n    \"rsvp\": \"YES\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/{event_id}/meal\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n    {\n     \"detail\": \"Meal with id {gift_id} does not exists for this event\"\n    }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "groupTitle": "Guest",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/guests/invitations/meal"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/guests/invitations",
+    "title": "List Guest Invitations",
     "name": "ListGuestInvites",
     "group": "Guest",
     "description": "<p>List all events a guest is invited to</p>",
@@ -1020,7 +1791,7 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"guest\": {\n         \"id\": \"5a9af36690326a363e622402\",\n         \"firstName\": \"New\",\n         \"lastName\": \"York\",\n         \"phoneNumber\": \"56781061\",\n         \"email\": \"olamide@gmail.com\",\n         \"accountId\": null\n         },\n    \"invitations\": [\n     {\n         \"id\": \"5aaa50224ffaf845a7c5162d\",\n         \"name\": null,\n         \"phoneNumber\": null,\n         \"email\": null,\n         \"eventid\": \"5a9af36690326a363e622402\",\n         \"attending\": 0\n     },\n     {\n         \"id\": \"5aaa51764ffaf84b7438010f\",\n         \"name\": \"New Yorker\",\n         \"phoneNumber\": \"56781061\",\n         \"email\": \"olamide@gmail.com\",\n         \"eventid\": \"5a9af36690326a363e622402\",\n         \"attending\": 0\n     }\n     ]\n }\n}",
+          "content": "[\n     {\n         \"id\": \"5acd6a112ac649312037137d\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phone\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-0\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \"rsvp\": \"NO\"\n      },\n      {\n         \"id\": \"5acd6a112ac649312037137e\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phone\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-2\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \"rsvp\": \"NO\"\n     },\n     {\n         \"id\": \"5acd6a112ac649312037137f\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phone\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-1\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \"rsvp\": \"NO\"\n     }\n]",
           "type": "json"
         }
       ]
@@ -1030,7 +1801,60 @@
     "groupTitle": "Guest",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/guests/invitation"
+        "url": "https://mxevent.herokuapp.com/guests/invitations"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/guests",
+    "title": "View guest details",
+    "name": "ViewGuest",
+    "group": "Guest",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ],
+        "Custom Response Header": [
+          {
+            "group": "Custom Response Header",
+            "type": "Number",
+            "optional": false,
+            "field": "X-mxEvent-profile-code",
+            "description": "<p>Status code about the profile.<br> 110: Indicates that the user with the authorization token as has been registered on the platform to another user role. But not as an event vendor. Also an HTTP Status of 204 is returned.<br> 120: Indicates the user has incomplete profile information an may require update.<br> 130: Indicated the user has a complete profile information.</p>"
+          },
+          {
+            "group": "Custom Response Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-mxEvent-profile-msg",
+            "description": "<p>Message.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "groupTitle": "Guest",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/guests"
       }
     ]
   },
@@ -1042,13 +1866,29 @@
     "group": "Guest",
     "header": {
       "fields": {
-        "Header": [
+        "Request Header": [
           {
-            "group": "Header",
+            "group": "Request Header",
             "type": "String",
             "optional": false,
             "field": "Authorization",
             "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ],
+        "Custom Response Header": [
+          {
+            "group": "Custom Response Header",
+            "type": "Number",
+            "optional": false,
+            "field": "X-mxEvent-profile-code",
+            "description": "<p>Status code about the profile.<br> 110: Indicates that the user with the authorization token as has been registered on the platform to another user role. But not as an event vendor. Also an HTTP Status of 204 is returned.<br> 120: Indicates the user has incomplete profile information an may require update.<br> 130: Indicated the user has a complete profile information.</p>"
+          },
+          {
+            "group": "Custom Response Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-mxEvent-profile-msg",
+            "description": "<p>Message.</p>"
           }
         ]
       }
@@ -1071,7 +1911,7 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n\"email\": \"olamide@gmail.com\"\n }",
+          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\"\n }",
           "type": "json"
         }
       ]
@@ -1087,39 +1927,55 @@
   },
   {
     "type": "post",
-    "url": "/invitation/events/{event_id}",
+    "url": "/invitations/events/{event_id}",
     "title": "Create New Invitation",
     "name": "CreateInvitation",
     "group": "Invitations",
+    "description": "<p>Use this endpoint to create a invitation. This endpoint tries to get the guest user being invited from the provided email or phone number, and if no user matches this information. Then a new guest user is created.</p>",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
-        "Parameter": [
+        "Parameters": [
           {
-            "group": "Parameter",
+            "group": "Parameters",
             "type": "String",
             "optional": false,
             "field": "name",
             "description": "<p>guest name.</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Parameters",
             "type": "String",
             "optional": true,
             "field": "phoneNumber",
             "description": "<p>guest phone number(either phone or email should be provided for sending out notification).</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Parameters",
             "type": "String",
             "optional": true,
             "field": "email",
             "description": "<p>guest email address(either phone or email should be provided for sending out notification).</p>"
-          },
+          }
+        ],
+        "Path Variable": [
           {
-            "group": "Parameter",
+            "group": "Path Variable",
             "type": "String",
             "optional": false,
-            "field": "eventid",
+            "field": "event_id",
             "description": "<p>Event ID to invite guest to.</p>"
           }
         ]
@@ -1127,7 +1983,7 @@
       "examples": [
         {
           "title": "Body:",
-          "content": "[{\n   \"name\": \"New Yorker\",\n   \"phoneNumber\": \"56781061\",\n   \"email\": \"olamide@gmail.com\"\n   },\n   ...\n   {\n   \"name\": \"New Yorker\",\n   \"phoneNumber\": \"56781061\",\n   \"email\": \"olamide@gmail.com\"\n   }\n   ]",
+          "content": "[\n     {\n         \"name\": \"French Montana\",\n         \"phoneNumber\": \"+234098776352\",\n         \"email\": \"french.montana@gmail.com\"\n     },\n     {\n         \"name\": \"Frank Castle\",\n         \"phoneNumber\": \"+2348176543289\",\n         \"email\": \"frank.castle@gmail.com\"\n     },\n     {\n         \"name\": \"Barry Allen\",\n         \"phoneNumber\": \"+123456789093\",\n         \"email\": \"barry.allen@gmail.com\"\n     }\n ]",
           "type": "json"
         }
       ]
@@ -1136,7 +1992,42 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n    \"id\": \"5aaa51764ffaf84b7438010f\",\n    \"name\": \"New Yorker\",\n    \"phoneNumber\": \"56781061\",\n    \"email\": \"olamide@gmail.com\",\n    \"eventid\": \"5a9af36690326a363e622402\",\n    \"attending\": 0\n    }",
+          "content": "[\n     {\n         \"id\": \"5acd6a112ac649312037137d\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phone\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n      },\n      {\n         \"id\": \"5acd6a112ac649312037137e\",\n         \"guest\": {\n             \"id\": \"5acd57492ac649498c5c4d82\",\n             \"name\": \"Frank Castle\",\n             \"phone\": \"+2348176543289\",\n             \"email\": \"frank.castle@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     },\n     {\n         \"id\": \"5acd6a112ac649312037137f\",\n         \"guest\": {\n             \"id\": \"5acd5fbf2ac6493120371379\",\n             \"name\": \"Barry Allen\",\n             \"phone\": \"+123456789093\",\n             \"email\": \"barry.allen@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/invitations/events/5acd58af2ac649498c5c4d86\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -1146,45 +2037,67 @@
     "groupTitle": "Invitations",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/invitation/events/{event_id}"
+        "url": "https://mxevent.herokuapp.com/invitations/events/{event_id}"
       }
     ]
   },
   {
-    "type": "post",
-    "url": "/invitation/events",
-    "title": "Create New Invitation",
-    "name": "CreateInvitation",
+    "type": "delete",
+    "url": "/invitations/events/{event_id}",
+    "title": "Delete Invitation",
+    "name": "DeleteInvitation",
     "group": "Invitations",
-    "parameter": {
+    "header": {
       "fields": {
-        "Parameter": [
+        "Request Header": [
           {
-            "group": "Parameter",
+            "group": "Request Header",
             "type": "String",
             "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token for PLANNER user from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameters": [
+          {
+            "group": "Parameters",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>invitation id to update/edit.</p>"
+          },
+          {
+            "group": "Parameters",
+            "type": "String",
+            "optional": true,
             "field": "name",
             "description": "<p>guest name.</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Parameters",
             "type": "String",
             "optional": true,
             "field": "phoneNumber",
             "description": "<p>guest phone number(either phone or email should be provided for sending out notification).</p>"
           },
           {
-            "group": "Parameter",
+            "group": "Parameters",
             "type": "String",
             "optional": true,
             "field": "email",
             "description": "<p>guest email address(either phone or email should be provided for sending out notification).</p>"
-          },
+          }
+        ],
+        "Path Variable": [
           {
-            "group": "Parameter",
+            "group": "Path Variable",
             "type": "String",
             "optional": false,
-            "field": "eventid",
+            "field": "event_id",
             "description": "<p>Event ID to invite guest to.</p>"
           }
         ]
@@ -1192,7 +2105,7 @@
       "examples": [
         {
           "title": "Body:",
-          "content": "[{\n   \"name\": \"New Yorker\",\n   \"phoneNumber\": \"56781061\",\n   \"email\": \"olamide@gmail.com\",\n   \"eventid\": \"5a9af36690326a363e622402\"\n   },\n   ...\n   {\n   \"name\": \"New Yorker\",\n   \"phoneNumber\": \"56781061\",\n   \"email\": \"olamide@gmail.com\",\n   \"eventid\": \"5a9af36690326a363e622402\"\n   }\n   ]",
+          "content": "{\n     \"id\": \"5acd6a112ac649312037137d\" //important\n     \"name\": \"French Montana\",\n     \"phoneNumber\": \"+234098776352\",\n     \"email\": \"french.montana@gmail.com\"\n}",
           "type": "json"
         }
       ]
@@ -1201,7 +2114,42 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n    \"id\": \"5aaa51764ffaf84b7438010f\",\n    \"name\": \"New Yorker\",\n    \"phoneNumber\": \"56781061\",\n    \"email\": \"olamide@gmail.com\",\n    \"eventid\": \"5a9af36690326a363e622402\",\n    \"attending\": 0\n    }",
+          "content": "\n{\n    \"message\": \"Invitation with id 5acd6a112ac649312037137d deleted successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.      *</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/invitations/events/5acd58af2ac649498c5c4d86\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -1211,7 +2159,151 @@
     "groupTitle": "Invitations",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/invitation/events"
+        "url": "https://mxevent.herokuapp.com/invitations/events/{event_id}"
+      }
+    ]
+  },
+  {
+    "type": "put",
+    "url": "/invitations/guest",
+    "title": "List Guest Invitations",
+    "name": "GetGuestInvitation",
+    "group": "Invitations",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token for GUEST user from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "\n[\n     {\n         \"id\": \"5acd6a112ac649312037137d\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phone\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-0\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n      },\n      {\n         \"id\": \"5acd6a112ac649312037137e\",\n         \"guest\": {\n             \"id\": \"5acd57492ac649498c5c4d82\",\n             \"name\": \"Frank Castle\",\n             \"phone\": \"+2348176543289\",\n             \"email\": \"frank.castle@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-2\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     },\n     {\n         \"id\": \"5acd6a112ac649312037137f\",\n         \"guest\": {\n             \"id\": \"5acd5fbf2ac6493120371379\",\n             \"name\": \"Barry Allen\",\n             \"phone\": \"+123456789093\",\n             \"email\": \"barry.allen@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-1\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.      *</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/invitations/events/5acd58af2ac649498c5c4d86\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
+    "groupTitle": "Invitations",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/invitations/guest"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/invitations/events/{event_id}",
+    "title": "List Planner Invitations",
+    "name": "GetPlannerInvitation",
+    "group": "Invitations",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token for PLANNER user from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "[\n     {\n         \"id\": \"5acd6a112ac649312037137d\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phone\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n      },\n      {\n         \"id\": \"5acd6a112ac649312037137e\",\n         \"guest\": {\n             \"id\": \"5acd57492ac649498c5c4d82\",\n             \"name\": \"Frank Castle\",\n             \"phone\": \"+2348176543289\",\n             \"email\": \"frank.castle@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     },\n     {\n         \"id\": \"5acd6a112ac649312037137f\",\n         \"guest\": {\n             \"id\": \"5acd5fbf2ac6493120371379\",\n             \"name\": \"Barry Allen\",\n             \"phone\": \"+123456789093\",\n             \"email\": \"barry.allen@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.      *</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/invitations/events/5acd58af2ac649498c5c4d86\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
+    "groupTitle": "Invitations",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/invitations/events/{event_id}"
       }
     ]
   },
@@ -1236,10 +2328,37 @@
     },
     "description": "<p>This endpoint is to be used to signify a guests interest in attending or not attending an event. 0 Signifies not attending and 1 signifies attending.</p>",
     "parameter": {
+      "fields": {
+        "Parameters": [
+          {
+            "group": "Parameters",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Invitation ID</p>"
+          },
+          {
+            "group": "Parameters",
+            "type": "String",
+            "optional": false,
+            "field": "rsvp",
+            "description": "<p>Values YES, NO, MAYBE</p>"
+          }
+        ]
+      },
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n    \"id\": \"5aaa51764ffaf84b7438010f\",\n           \"name\": \"New Yorker\",\n           \"phoneNumber\": \"56781061\",\n           \"email\": \"olamide@gmail.com\",\n           \"eventid\": \"5a9af36690326a363e622402\",\n           \"attending\": 1\n       }",
+          "content": "{\n    \"id\": \"5aaa51764ffaf84b7438010f\",\n    \"rsvp\": \"MAYBE\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "\n{\n     \"id\": \"5aaa51764ffaf84b7438010f\",\n     \"guest\": {\n         \"id\": \"5acd2d2c70830d33e80f7478\",\n         \"name\": \"French Montana\",\n         \"phone\": \"+234098776352\",\n         \"email\": \"french.montana@gmail.com\"\n     },\n      \"event\": {\n         \"id\": \"5acd58af2ac649498c5c4d86\",\n         \"name\": \"First Planned Event\",\n         \"details\": \"This is the first Event I inserted into the Database\"\n     },\n\n     \"rsvp\": \"MAYBE\"\n}",
           "type": "json"
         }
       ]
@@ -1254,127 +2373,115 @@
     ]
   },
   {
-    "type": "get",
-    "url": "/invitation/",
-    "title": "All invitations",
-    "name": "ViewAllInvitation",
+    "type": "put",
+    "url": "/invitations/events/{event_id}",
+    "title": "Edit/Update Invitation",
+    "name": "UpdateInvitation",
     "group": "Invitations",
-    "success": {
-      "examples": [
-        {
-          "title": "Response:",
-          "content": "[{\n        \"id\": \"5aaa51764ffaf84b7438010f\",\n        \"name\": \"New Yorker\",\n        \"phoneNumber\": \"56781061\",\n        \"email\": \"olamide@gmail.com\",\n        \"eventid\": \"5a9af36690326a363e622402\",\n        \"attending\": 0\n        }\n        ...\n        {\n        \"id\": \"5aaa51764ffaf84b7438010f\",\n        \"name\": \"New Yorker\",\n        \"phoneNumber\": \"56781061\",\n        \"email\": \"olamide@gmail.com\",\n        \"eventid\": \"5a9af36690326a363e622402\",\n        \"attending\": 0\n        }\n        ]",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
-    "groupTitle": "Invitations",
-    "sampleRequest": [
-      {
-        "url": "https://mxevent.herokuapp.com/invitation/"
+    "description": "<p>Use this endpoint to update invitation information. This endpoint tries to get the guest user being invited from the provided email or phone number, and if no user matches this information. Then a new guest user is created. The endpoint requires the authenticated user should have a planner role</p>",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token for PLANNER user from firebase authentication.</p>"
+          }
+        ]
       }
-    ]
-  },
-  {
-    "type": "get",
-    "url": "/invitation/list/event/{id}",
-    "title": "All invitations for an event",
-    "name": "ViewEventInvitation",
-    "group": "Invitations",
+    },
     "parameter": {
       "fields": {
-        "Parameter": [
+        "Parameters": [
           {
-            "group": "Parameter",
+            "group": "Parameters",
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>Event IDs to view invitations for.</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Response:",
-          "content": "[{\n        \"id\": \"5aaa51764ffaf84b7438010f\",\n        \"name\": \"New Yorker\",\n        \"phoneNumber\": \"56781061\",\n        \"email\": \"olamide@gmail.com\",\n        \"eventid\": \"5a9af36690326a363e622402\",\n        \"attending\": 0\n        }\n        ...\n        {\n            \"id\": \"5aaa51764ffaf84b7438010f\",\n            \"name\": \"New Yorker\",\n            \"phoneNumber\": \"56781061\",\n            \"email\": \"olamide@gmail.com\",\n            \"eventid\": \"5a9af36690326a363e622402\",\n            \"attending\": 0\n        }\n    ]",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
-    "groupTitle": "Invitations",
-    "sampleRequest": [
-      {
-        "url": "https://mxevent.herokuapp.com/invitation/list/event/{id}"
-      }
-    ]
-  },
-  {
-    "type": "get",
-    "url": "/invitation/list/guest/{guest}",
-    "title": "Single guest invitations",
-    "name": "ViewGuestInvitation",
-    "group": "Invitations",
-    "parameter": {
-      "fields": {
-        "Parameter": [
+            "description": "<p>invitation id to update/edit.</p>"
+          },
           {
-            "group": "Parameter",
+            "group": "Parameters",
             "type": "String",
             "optional": false,
-            "field": "guest",
-            "description": "<p>Guest phone or email to view invites.</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Response:",
-          "content": "[{\n            \"id\": \"5aaa51764ffaf84b7438010f\",\n            \"name\": \"New Yorker\",\n            \"phoneNumber\": \"56781061\",\n            \"email\": \"olamide@gmail.com\",\n            \"eventid\": \"5a9af36690326a363e622402\",\n            \"attending\": 0\n            }\n        ...\n        {\n        \"id\": \"5aaa51764ffaf84b7438010f\",\n        \"name\": \"New Yorker\",\n        \"phoneNumber\": \"56781061\",\n        \"email\": \"olamide@gmail.com\",\n        \"eventid\": \"5a9af36690326a363e622402\",\n        \"attending\": 0\n        }\n     ]",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/main/java/com/mx/eventapi/web/rest/InvitationController.java",
-    "groupTitle": "Invitations",
-    "sampleRequest": [
-      {
-        "url": "https://mxevent.herokuapp.com/invitation/list/guest/{guest}"
-      }
-    ]
-  },
-  {
-    "type": "get",
-    "url": "/invitation/view/{id}",
-    "title": "View invitation details",
-    "name": "ViewInvitation",
-    "group": "Invitations",
-    "parameter": {
-      "fields": {
-        "Parameter": [
+            "field": "name",
+            "description": "<p>guest name.</p>"
+          },
           {
-            "group": "Parameter",
+            "group": "Parameters",
+            "type": "String",
+            "optional": true,
+            "field": "phoneNumber",
+            "description": "<p>guest phone number(either phone or email should be provided for sending out notification).</p>"
+          },
+          {
+            "group": "Parameters",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>guest email address(either phone or email should be provided for sending out notification).</p>"
+          }
+        ],
+        "Path Variable": [
+          {
+            "group": "Path Variable",
             "type": "String",
             "optional": false,
-            "field": "id",
-            "description": "<p>Invitation ID to view.</p>"
+            "field": "event_id",
+            "description": "<p>Event ID to invite guest to.</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Body:",
+          "content": "{\n     \"id\": \"5acd6a112ac649312037137d\"\n     \"name\": \"French Montana\",\n     \"phoneNumber\": \"+234098776352\",\n     \"email\": \"french.montana@gmail.com\"\n}",
+          "type": "json"
+        }
+      ]
     },
     "success": {
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n            \"id\": \"5aaa51764ffaf84b7438010f\",\n            \"name\": \"New Yorker\",\n            \"phoneNumber\": \"56781061\",\n            \"email\": \"olamide@gmail.com\",\n            \"eventid\": \"5a9af36690326a363e622402\",\n            \"attending\": 0\n            }",
+          "content": "\n{\n     \"id\": \"5acd6a112ac649312037137d\",\n     \"guest\": {\n         \"id\": \"5acd2d2c70830d33e80f7478\",\n         \"name\": \"French Montana\",\n         \"phone\": \"+234098776352\",\n         \"email\": \"french.montana@gmail.com\"\n     },\n      \"event\": {\n         \"id\": \"5acd58af2ac649498c5c4d86\",\n         \"name\": \"First Planned Event\",\n         \"details\": \"This is the first Event I inserted into the Database\"\n     },\n     \n     \"rsvp\": \"NO\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.      *</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/invitations/events/5acd58af2ac649498c5c4d86\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -1384,7 +2491,7 @@
     "groupTitle": "Invitations",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/invitation/view/{id}"
+        "url": "https://mxevent.herokuapp.com/invitations/events/{event_id}"
       }
     ]
   },
@@ -1423,7 +2530,7 @@
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n    \"type\": \"type\",\n    \"meal_name\": \"name\",\n    \"interest\": \"interest\"\n}",
+          "content": "[\n    {\n        \"type\": \"type\",\n        \"meal_name\": \"name\",\n        \"interest\": \"interest\"\n    },\n    ...\n]",
           "type": "json"
         }
       ]
@@ -1432,7 +2539,47 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"type\": \"type\",\n     \"meal_name\": \"name\",\n     \"interest\": \"interest\"\n }",
+          "content": "[\n {\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"type\": \"type\",\n     \"meal_name\": \"name\",\n     \"interest\": \"interest\"\n },\n ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/{event_id}/meal\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n {\n     \"detail: \"New meal cannot already have an ID\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -1555,7 +2702,7 @@
   },
   {
     "type": "put",
-    "url": "/events/{event_id}/gifts/{meal_id}",
+    "url": "/events/{event_id}/meal",
     "title": "Edit/Update Meal Entity.",
     "name": "EditMeal",
     "group": "Meal",
@@ -1595,7 +2742,7 @@
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n    \"type\": \"type\",\n    \"meal_name\": \"name\",\n    \"interest\": \"interest\"\n}",
+          "content": "{\n    \"id\": \"5aaa41c8b854660004011b60\",\n    \"type\": \"new type\",\n    \"meal_name\": \"new name\",\n    \"interest\": \"new interest\"\n}",
           "type": "json"
         }
       ]
@@ -1604,7 +2751,47 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n    \"id\": \"5aaa41c8b854660004011b60\",\n    \"giftName\": \"First Planned Event\",\n    \"giftUrl\": \"This is the first Event I inserted into the Database\"\n}",
+          "content": "{\n    \"id\": \"5aaa41c8b854660004011b60\",\n    \"type\": \"new type\",\n    \"meal_name\": \"new name\",\n    \"interest\": \"new interest\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/{event_id}/meal\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n {\n     \"detail: \"Must specify the Meal ID in has a parameter\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -1614,7 +2801,7 @@
     "groupTitle": "Meal",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/events/{event_id}/gifts/{meal_id}"
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/meal"
       }
     ]
   },
@@ -1738,10 +2925,28 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n\"message\": \"Successfully deleted User\"\n}",
+          "content": "{\n \"message\": \"Successfully deleted User\"\n}",
           "type": "json"
         }
       ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": ""
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "BadCredentialsException",
+            "description": "<p>returns http status code 500</p>"
+          }
+        ]
+      }
     },
     "version": "0.0.0",
     "filename": "src/main/java/com/mx/eventapi/web/rest/PlannerController.java",
@@ -1775,7 +2980,7 @@
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n\"firstName\": \"first\",\n\"lastName\": \"last\",\n\"email\": \"planner@example.com\"\n\"phone\" : \"+1234567890\",\n\"description\" : \"Description\",\n\"address\" : \"Company Address\",\n\"companyName\" : \"Company Name\",\n\"dob\" : \"31-12-1990\",\n\"sex\" : \"F\"\n}",
+          "content": "{\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"planner@example.com\"\n     \"phone\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\"\n}",
           "type": "json"
         }
       ]
@@ -1784,7 +2989,7 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n\"id\": \"5aaf62b84ffaf87e05dada37\",\n\"firstName\": \"first\",\n\"lastName\": \"last\",\n\"email\": \"planner@example.com\"\n\"phone\" : \"+1234567890\",\n\"description\" : \"Description\",\n\"address\" : \"Company Address\",\n\"companyName\" : \"Company Name\",\n\"dob\" : \"31-12-1990\",\n\"sex\" : \"F\",\n\"roles\": [\n{\nname: \"ROLE_USER\"\n},\n....\n{\nname: \"ROLE_PLANNER\"\n}\n],\n\"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
+          "content": "{\n     \"id\": \"5aaf62b84ffaf87e05dada37\",\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"planner@example.com\"\n     \"phone\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\",\n     \"roles\": [\n         {\n             name: \"ROLE_USER\"\n         },\n         ...\n         {\n             name: \"ROLE_PLANNER\"\n         }\n     ],\n     \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
           "type": "json"
         }
       ]
@@ -1821,7 +3026,7 @@
             "type": "Number",
             "optional": false,
             "field": "X-mxEvent-profile-code",
-            "description": "<p>Status code about the profile.<br> 110: Indicates that the user with the authorization token as has been registered on the platform to another user role. But not as an event planner. Also an HTTP Status of 204 is returned.<br> 120: Indicates the user has incomplete profile information an may require update.</p>"
+            "description": "<p>Status code about the profile.<br> 110: Indicates that the user with the authorization token as has been registered on the platform to another user role. But not as an event planner. Also an HTTP Status of 204 is returned.<br> 120: Indicates the user has incomplete profile information an may require update.<br> 130: Indicated the user has a complete profile information.</p>"
           },
           {
             "group": "Custom Response Header",
@@ -1896,6 +3101,46 @@
         {
           "title": "Response:",
           "content": "[\n {\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"title\": \"Programme name\",\n     \"time\": \"10:15\"\n },\n ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/{event_id}/programme\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n {\n     \"detail: \"New meal cannot already have an ID\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
           "type": "json"
         }
       ]
@@ -2018,7 +3263,7 @@
   },
   {
     "type": "put",
-    "url": "/events/{event_id}/programme/{programme_id}",
+    "url": "/events/{event_id}/programme",
     "title": "Edit/Update Programme Entity.",
     "name": "EditProgramme",
     "group": "Programme",
@@ -2072,12 +3317,52 @@
         }
       ]
     },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/{event_id}/programme\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n {\n     \"detail: \"Must specify the Programme ID in has a parameter\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
+          "type": "json"
+        }
+      ]
+    },
     "version": "0.0.0",
     "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
     "groupTitle": "Programme",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/events/{event_id}/programme/{programme_id}"
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/programme"
       }
     ]
   },
@@ -2118,7 +3403,7 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "[\n     {\n         \"id\": \"5aaa41c8b854660004011b60\",\n         \"title\": \"Programme name\",\n         \"time\": \"10:15\"\n     },\n     ...\n     {\n         \"id\": \"5a9af73990326a3743aa9f05\",\n         \"title\": \"Programme name\",\n         \"time\": \"10:15\"\n     }\n ]",
+          "content": "[\n     {\n         \"id\": \"5aaa41c8b854660004011b60\",\n         \"title\": \"Programme name 1\",\n         \"time\": \"10:15\"\n     },\n     ...\n     {\n         \"id\": \"5a9af73990326a3743aa9f05\",\n         \"title\": \"Programme name 2\",\n         \"time\": \"12:15\"\n     }\n ]",
           "type": "json"
         }
       ]
@@ -2284,7 +3569,7 @@
             "type": "Number",
             "optional": false,
             "field": "X-mxEvent-profile-code",
-            "description": "<p>Status code about the profile.<br> 110: Indicates that the user with the authorization token as has been registered on the platform to another user role. But not as an event vendor. Also an HTTP Status of 204 is returned.<br> 120: Indicates the user has incomplete profile information an may require update.</p>"
+            "description": "<p>Status code about the profile.<br> 110: Indicates that the user with the authorization token as has been registered on the platform to another user role. But not as an event vendor. Also an HTTP Status of 204 is returned.<br> 120: Indicates the user has incomplete profile information an may require update.<br> 130: Indicated the user has a complete profile information.</p>"
           },
           {
             "group": "Custom Response Header",
