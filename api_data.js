@@ -1,7 +1,7 @@
 define({ "api": [
   {
     "type": "post",
-    "url": "/events/{event_id}/dress-code",
+    "url": "/events/{event_id}/dress-codes",
     "title": "Create Dress Code Entity",
     "name": "CreateDressCode",
     "group": "DressCode",
@@ -93,13 +93,13 @@ define({ "api": [
     "groupTitle": "DressCode",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/events/{event_id}/dress-code"
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/dress-codes"
       }
     ]
   },
   {
     "type": "delete",
-    "url": "/events/{event_id}/dress-code",
+    "url": "/events/{event_id}/dress-codes",
     "title": "Deletes all DressCodes",
     "name": "DeleteAllDressCode",
     "group": "DressCode",
@@ -143,7 +143,7 @@ define({ "api": [
     "groupTitle": "DressCode",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/events/{event_id}/dress-code"
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/dress-codes"
       }
     ]
   },
@@ -334,7 +334,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/events/{event_id}/dress-code",
+    "url": "/events/{event_id}/dress-codes",
     "title": "List all Dress Code.",
     "name": "ListDressCodes",
     "group": "DressCode",
@@ -379,7 +379,7 @@ define({ "api": [
     "groupTitle": "DressCode",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/events/{event_id}/dress-code"
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/dress-codes"
       }
     ]
   },
@@ -1388,52 +1388,6 @@ define({ "api": [
     ]
   },
   {
-    "type": "put",
-    "url": "/guests",
-    "title": "Create New Guest",
-    "name": "CreateGuest",
-    "group": "Guest",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>Authorization token from firebase authentication.</p>"
-          }
-        ]
-      }
-    },
-    "parameter": {
-      "examples": [
-        {
-          "title": "Body:",
-          "content": "{\n\"firstName\": \"New\",\n\"lastName\": \"York\",\n\"phoneNumber\": \"56781061\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Response:",
-          "content": "{\n\"id\": \"5aaa4795b854660004011b61\",\n\"firstName\": \"New\",\n\"lastName\": \"York\",\n\"phoneNumber\": \"56781061\",\n\"email\": \"olamide@gmail.com\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
-    "groupTitle": "Guest",
-    "sampleRequest": [
-      {
-        "url": "https://mxevent.herokuapp.com/guests"
-      }
-    ]
-  },
-  {
     "type": "post",
     "url": "/guests",
     "title": "Create New Guest",
@@ -1802,6 +1756,52 @@ define({ "api": [
     "sampleRequest": [
       {
         "url": "https://mxevent.herokuapp.com/guests/invitations"
+      }
+    ]
+  },
+  {
+    "type": "put",
+    "url": "/guests",
+    "title": "Update/Edit New Guest",
+    "name": "UpdateGuest",
+    "group": "Guest",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "examples": [
+        {
+          "title": "Body:",
+          "content": "{\n\"firstName\": \"New\",\n\"lastName\": \"York\",\n\"phoneNumber\": \"56781061\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "{\n\"id\": \"5aaa4795b854660004011b61\",\n\"firstName\": \"New\",\n\"lastName\": \"York\",\n\"phoneNumber\": \"56781061\",\n\"email\": \"olamide@gmail.com\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "groupTitle": "Guest",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/guests"
       }
     ]
   },
@@ -2497,7 +2497,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/events/{event_id}/meal",
+    "url": "/events/{event_id}/meals",
     "title": "Create Meal Entity",
     "name": "CreateMeal",
     "group": "Meal",
@@ -2530,7 +2530,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Body:",
-          "content": "[\n    {\n        \"type\": \"type\",\n        \"meal_name\": \"name\",\n        \"interest\": \"interest\"\n    },\n    ...\n]",
+          "content": "[\n    {\n        \"type\": \"type\",\n        \"mealName\": \"name\",\n        \"interest\": \"interest\"\n    },\n    ...\n]",
           "type": "json"
         }
       ]
@@ -2539,7 +2539,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "[\n {\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"type\": \"type\",\n     \"meal_name\": \"name\",\n     \"interest\": \"interest\"\n },\n ...\n]",
+          "content": "[\n {\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"type\": \"type\",\n     \"mealName\": \"name\",\n     \"interest\": \"interest\"\n },\n ...\n]",
           "type": "json"
         }
       ]
@@ -2589,13 +2589,13 @@ define({ "api": [
     "groupTitle": "Meal",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/events/{event_id}/meal"
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/meals"
       }
     ]
   },
   {
     "type": "delete",
-    "url": "/events/{event_id}/meal",
+    "url": "/events/{event_id}/meals",
     "title": "Deletes all Meal",
     "name": "DeleteAllMeal",
     "group": "Meal",
@@ -2639,7 +2639,7 @@ define({ "api": [
     "groupTitle": "Meal",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/events/{event_id}/meal"
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/meals"
       }
     ]
   },
@@ -2742,7 +2742,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n    \"id\": \"5aaa41c8b854660004011b60\",\n    \"type\": \"new type\",\n    \"meal_name\": \"new name\",\n    \"interest\": \"new interest\"\n}",
+          "content": "{\n    \"id\": \"5aaa41c8b854660004011b60\",\n    \"type\": \"new type\",\n    \"mealName\": \"new name\",\n    \"interest\": \"new interest\"\n}",
           "type": "json"
         }
       ]
@@ -2751,7 +2751,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n    \"id\": \"5aaa41c8b854660004011b60\",\n    \"type\": \"new type\",\n    \"meal_name\": \"new name\",\n    \"interest\": \"new interest\"\n}",
+          "content": "{\n    \"id\": \"5aaa41c8b854660004011b60\",\n    \"type\": \"new type\",\n    \"mealName\": \"new name\",\n    \"interest\": \"new interest\"\n}",
           "type": "json"
         }
       ]
@@ -2807,7 +2807,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/events/{event_id}/meal",
+    "url": "/events/{event_id}/meals",
     "title": "List all Meals.",
     "name": "ListMeal",
     "group": "Meal",
@@ -2842,7 +2842,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "[\n     {\n         \"id\": \"5aaa41c8b854660004011b60\",\n         \"type\": \"type0\",\n         \"meal_name\": \"name0\",\n         \"interest\": \"interest0\"\n     },\n     ...\n     {\n         \"id\": \"5aaa41c8bwefffffd3434344\",\n         \"type\": \"type1\",\n         \"meal_name\": \"name1\",\n         \"interest\": \"interest1\"\n     }\n ]",
+          "content": "[\n     {\n         \"id\": \"5aaa41c8b854660004011b60\",\n         \"type\": \"type0\",\n         \"mealName\": \"name0\",\n         \"interest\": \"interest0\"\n     },\n     ...\n     {\n         \"id\": \"5aaa41c8bwefffffd3434344\",\n         \"type\": \"type1\",\n         \"mealName\": \"name1\",\n         \"interest\": \"interest1\"\n     }\n ]",
           "type": "json"
         }
       ]
@@ -2852,7 +2852,7 @@ define({ "api": [
     "groupTitle": "Meal",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/events/{event_id}/meal"
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/meals"
       }
     ]
   },
@@ -3058,7 +3058,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/events/{event_id}/programme",
+    "url": "/events/{event_id}/programmes",
     "title": "Create Programme Entity",
     "name": "CreateProgramme",
     "group": "Programme",
@@ -3150,13 +3150,13 @@ define({ "api": [
     "groupTitle": "Programme",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/events/{event_id}/programme"
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/programmes"
       }
     ]
   },
   {
     "type": "delete",
-    "url": "/events/{event_id}/programme",
+    "url": "/events/{event_id}/programmes",
     "title": "Deletes all Programmes",
     "name": "DeleteAllProgramme",
     "group": "Programme",
@@ -3200,7 +3200,7 @@ define({ "api": [
     "groupTitle": "Programme",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/events/{event_id}/programme"
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/programmes"
       }
     ]
   },
@@ -3368,7 +3368,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/events/{event_id}/programme",
+    "url": "/events/{event_id}/programmes",
     "title": "List all Programmes.",
     "name": "ListProgrammes",
     "group": "Programme",
@@ -3413,7 +3413,7 @@ define({ "api": [
     "groupTitle": "Programme",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/events/{event_id}/programme"
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/programmes"
       }
     ]
   },
