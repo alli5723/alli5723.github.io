@@ -470,6 +470,103 @@
     ]
   },
   {
+    "type": "put",
+    "url": "/events/{event_id}/gallery",
+    "title": "Create Gallery Entity",
+    "name": "CreateGallery",
+    "group": "Events",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Path Variable": [
+          {
+            "group": "Path Variable",
+            "type": "String",
+            "optional": false,
+            "field": "event_id",
+            "description": "<p>Event unique ID.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Body:",
+          "content": "[\n         {\n             \"name\": \"Image Name\",\n             \"url\": \"Image url\"\n         },\n         ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "{\n    \"id\": \"9r8808ioujn98u80u8909ik\"\n    \"event\": {\n        \"id\": \"5acd58af2ac649498c5c4d86\",\n        \"name\": \"First Planned Event\",\n        \"details\": \"This is the first Event I inserted into the Database\"\n    },\n    \"images\": [\n        {\n            \"name\": \"Image Name\",\n            \"url\": \"Image url\"\n        },\n        ...\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/{event_id}/gallery\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n {\n     \"detail: \"New meal cannot already have an ID\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "groupTitle": "Events",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/gallery"
+      }
+    ]
+  },
+  {
     "type": "delete",
     "url": "/events/{id}",
     "title": "Delete Event",
@@ -774,6 +871,57 @@
     ]
   },
   {
+    "type": "get",
+    "url": "/events/{event_id}/notify-guests",
+    "title": "Send Notification",
+    "name": "NotifyGuest",
+    "group": "Events",
+    "description": "<p>Send notification to guests of an event</p>",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Path Variable": [
+          {
+            "group": "Path Variable",
+            "type": "String",
+            "optional": false,
+            "field": "event_id",
+            "description": "<p>Event unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "[\n     {\n         \"id\": \"5aaf62b84ffaf87e05dada37\",\n         \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\",\n         \"firstName\": \"first\",\n         \"lastName\": \"last\",\n         \"gcmToken\"\n         \"email\": \"planner@example.com\"\n         \"phone\" : \"+1234567890\",\n         \"roles\": [\n             {\n                 name: \"ROLE_USER\"\n             },\n             ...\n             {\n              name: \"ROLE_GUEST\"\n             }\n          ]\n     }\n     ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "groupTitle": "Events",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/notify-guests"
+      }
+    ]
+  },
+  {
     "type": "put",
     "url": "/events",
     "title": "Update Event details",
@@ -868,7 +1016,7 @@
   },
   {
     "type": "post",
-    "url": "/gatekeeper/guests/checked-in",
+    "url": "/gatekeepers/guests/checked-in",
     "title": "Check-in Guest",
     "name": "CheckinGuest",
     "group": "GateKeeper",
@@ -901,7 +1049,7 @@
             "type": "String",
             "optional": false,
             "field": "rsvp",
-            "description": "<p>Values YES, NO, MAYBE</p>"
+            "description": "<p>Values CHECKED_IN</p>"
           }
         ]
       },
@@ -927,13 +1075,13 @@
     "groupTitle": "GateKeeper",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/gatekeeper/guests/checked-in"
+        "url": "https://mxevent.herokuapp.com/gatekeepers/guests/checked-in"
       }
     ]
   },
   {
     "type": "get",
-    "url": "/gatekeeper/event/{event_id}/guests",
+    "url": "/gatekeepers/event/{event_id}/guests",
     "title": "View all Guest",
     "name": "GetGuestList",
     "group": "GateKeeper",
@@ -959,7 +1107,7 @@
             "type": "String",
             "optional": false,
             "field": "event_id",
-            "description": "<p>Event ID     *</p>"
+            "description": "<p>Event ID</p>"
           }
         ]
       }
@@ -978,7 +1126,7 @@
     "groupTitle": "GateKeeper",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/gatekeeper/event/{event_id}/guests"
+        "url": "https://mxevent.herokuapp.com/gatekeepers/event/{event_id}/guests"
       }
     ]
   },
@@ -1782,7 +1930,7 @@
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n\"firstName\": \"New\",\n\"lastName\": \"York\",\n\"phoneNumber\": \"56781061\"\n}",
+          "content": "{\n    \"firstName\": \"New\",\n    \"lastName\": \"York\",\n    \"phoneNumber\": \"56781061\",\n    \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n}",
           "type": "json"
         }
       ]
@@ -1791,7 +1939,7 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n\"id\": \"5aaa4795b854660004011b61\",\n\"firstName\": \"New\",\n\"lastName\": \"York\",\n\"phoneNumber\": \"56781061\",\n\"email\": \"olamide@gmail.com\"\n}",
+          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n}",
           "type": "json"
         }
       ]
@@ -1844,7 +1992,7 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\"\n }",
+          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n }",
           "type": "json"
         }
       ]
@@ -1911,7 +2059,7 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\"\n }",
+          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n }",
           "type": "json"
         }
       ]
@@ -3042,7 +3190,7 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaf62b84ffaf87e05dada37\",\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"planner@example.com\"\n     \"phone\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\",\n     \"roles\": [\n         {\n             name: \"ROLE_USER\"\n         },\n         ....\n         {\n             name: \"ROLE_PLANNER\"\n         }\n     ],\n     \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
+          "content": "{\n\"id\": \"5aaf62b84ffaf87e05dada37\",\n\"firstName\": \"first\",\n\"lastName\": \"last\",\n\"email\": \"planner@example.com\"\n\"phone\" : \"+1234567890\",\n\"description\" : \"Description\",\n\"address\" : \"Company Address\",\n\"companyName\" : \"Company Name\",\n\"dob\" : \"31-12-1990\",\n\"sex\" : \"F\",\n\"roles\": [\n{\nname: \"ROLE_USER\"\n},\n....\n{\nname: \"ROLE_PLANNER\"\n}\n],\n\"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
           "type": "json"
         }
       ]
