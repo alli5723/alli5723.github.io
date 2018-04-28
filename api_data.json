@@ -1583,6 +1583,188 @@
   },
   {
     "type": "delete",
+    "url": "/guests/invitations/gift",
+    "title": "Update Gift interest for Event",
+    "name": "DGuestGiftInterest",
+    "group": "Guest",
+    "description": "<p>A guest indicates interest in selecting a gift. The gift must exists shared in event get guest is invited to.</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "inviteId",
+            "description": "<p>Invitation ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "giftId",
+            "description": "<p>Gift ID</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Body:",
+          "content": "{\n     \"inviteId\": \"5acd6a112ac649312037137f\",\n     \"giftId\": \"5aaa41c8b854660004011b60\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/{event_id}/meal\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n    {\n        \"detail\": \"Gift with id {gift_id} does not exists for this event\"\n    }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail\": \"Expired Token\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "groupTitle": "Guest",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/guests/invitations/gift"
+      }
+    ]
+  },
+  {
+    "type": "delete",
+    "url": "/guests/invitations/meal",
+    "title": "Update Meal interest for Event",
+    "name": "DGuestMealInterest",
+    "group": "Guest",
+    "description": "<p>A guest indicates interest in selecting a meal. The meal must be served in event get guest is invited to.</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "inviteId",
+            "description": "<p>Invitation ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "mealId",
+            "description": "<p>Meal ID</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Body:",
+          "content": "{\n     \"inviteId\": \"5acd6a112ac649312037137f\",\n     \"mealId\": \"5aaa41c8bwefffffd3434344\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n     \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n     \"title\": \"Forbidden\",\n     \"status\": 403,\n     \"detail\": \"Access is denied\",\n     \"path\": \"/events/{event_id}/meal\",\n     \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n     \"detail\": \"Meal with id {gift_id} does not exists for this event\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"detail: \"Expired Token\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "groupTitle": "Guest",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/guests/invitations/meal"
+      }
+    ]
+  },
+  {
+    "type": "delete",
     "url": "/guests",
     "title": "Delete Guest",
     "name": "DeleteGuest",
@@ -2456,8 +2638,8 @@
     ]
   },
   {
-    "type": "post",
-    "url": "/invitation/rsvp",
+    "type": "put",
+    "url": "/invitations/rsvp",
     "title": "RSVP to an event",
     "name": "InvitationRSVP",
     "group": "Invitations",
@@ -2497,7 +2679,7 @@
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n    \"id\": \"5aaa51764ffaf84b7438010f\",\n    \"rsvp\": \"MAYBE\"\n}",
+          "content": "{\n\"id\": \"5aaa51764ffaf84b7438010f\",\n\"rsvp\": \"MAYBE\"\n}",
           "type": "json"
         }
       ]
@@ -2506,7 +2688,7 @@
       "examples": [
         {
           "title": "Response:",
-          "content": "\n{\n     \"id\": \"5aaa51764ffaf84b7438010f\",\n     \"guest\": {\n         \"id\": \"5acd2d2c70830d33e80f7478\",\n         \"name\": \"French Montana\",\n         \"phone\": \"+234098776352\",\n         \"email\": \"french.montana@gmail.com\"\n     },\n      \"event\": {\n         \"id\": \"5acd58af2ac649498c5c4d86\",\n         \"name\": \"First Planned Event\",\n         \"details\": \"This is the first Event I inserted into the Database\"\n     },\n\n     \"rsvp\": \"MAYBE\"\n}",
+          "content": "<p>\n{\n\"id\": \"5aaa51764ffaf84b7438010f\",\n\"guest\": {\n\"id\": \"5acd2d2c70830d33e80f7478\",\n\"name\": \"French Montana\",\n\"phone\": \"+234098776352\",\n\"email\": \"french.montana@gmail.com\"\n},\n\"event\": {\n\"id\": \"5acd58af2ac649498c5c4d86\",\n\"name\": \"First Planned Event\",\n\"details\": \"This is the first Event I inserted into the Database\"\n},\n<p>\n\"rsvp\": \"MAYBE\"\n}",
           "type": "json"
         }
       ]
@@ -2516,7 +2698,7 @@
     "groupTitle": "Invitations",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/invitation/rsvp"
+        "url": "https://mxevent.herokuapp.com/invitations/rsvp"
       }
     ]
   },
@@ -3106,7 +3288,7 @@
     ]
   },
   {
-    "type": "post",
+    "type": "put",
     "url": "/planner",
     "title": "Update/Edit Planner",
     "name": "UpdatePlanner",
