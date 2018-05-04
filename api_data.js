@@ -415,7 +415,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Titilope Morolari\",\n         \"phone\": \"+23470676152\",\n         \"email\": \"tmorolari@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phone\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
           "type": "json"
         }
       ]
@@ -821,7 +821,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "[\n {\n     \"id\": \"5a9af36690326a363e622402\",\n\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted and editted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Titilope Morolari\",\n         \"phone\": \"+23470676152\",\n         \"email\": \"tmorolari@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n },\n ...\n {\n     \"id\": \"5a9af73990326a3743aa9f05\",\n\n     \"name\": \"Second Planned Event\",\n     \"details\": \"This is the second Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Titilope Morolari\",\n         \"phone\": \"+23470676152\",\n         \"email\": \"tmorolari@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 1,\n     \"published\": 0,\n     \"maxInvite\": 100\n }\n]",
+          "content": "[\n {\n     \"id\": \"5a9af36690326a363e622402\",\n\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted and editted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phone\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n },\n ...\n {\n     \"id\": \"5a9af73990326a3743aa9f05\",\n\n     \"name\": \"Second Planned Event\",\n     \"details\": \"This is the second Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phone\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 1,\n     \"published\": 0,\n     \"maxInvite\": 100\n }\n]",
           "type": "json"
         }
       ]
@@ -1167,7 +1167,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"location\": {\n         \"id\": \"5aca7a297948b76868dde727\",\n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n         \"extra\": \"extras\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Titilope Morolari\",\n         \"phone\": \"+23470676152\",\n         \"email\": \"tmorolari@gmail.com\"\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"location\": {\n         \"id\": \"5aca7a297948b76868dde727\",\n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n         \"extra\": \"extras\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phone\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
           "type": "json"
         }
       ]
@@ -1937,7 +1937,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"location\": {\n         \"id\": \"5aca7a297948b76868dde727\",\n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n         \"extra\": \"extras\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Titilope Morolari\",\n         \"phone\": \"+23470676152\",\n         \"email\": \"tmorolari@gmail.com\"\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"location\": {\n         \"id\": \"5aca7a297948b76868dde727\",\n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n         \"extra\": \"extras\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phone\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
           "type": "json"
         }
       ]
@@ -2137,59 +2137,6 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/guests",
-    "title": "View guest details",
-    "name": "ViewGuest",
-    "group": "Guest",
-    "header": {
-      "fields": {
-        "Request Header": [
-          {
-            "group": "Request Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>Authorization token from firebase authentication.</p>"
-          }
-        ],
-        "Custom Response Header": [
-          {
-            "group": "Custom Response Header",
-            "type": "Number",
-            "optional": false,
-            "field": "X-mxEvent-profile-code",
-            "description": "<p>Status code about the profile.<br> 110: Indicates that the user with the authorization token as has been registered on the platform to another user role. But not as an event vendor. Also an HTTP Status of 204 is returned.<br> 120: Indicates the user has incomplete profile information an may require update.<br> 130: Indicated the user has a complete profile information.</p>"
-          },
-          {
-            "group": "Custom Response Header",
-            "type": "String",
-            "optional": false,
-            "field": "X-mxEvent-profile-msg",
-            "description": "<p>Message.</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n }",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
-    "groupTitle": "Guest",
-    "sampleRequest": [
-      {
-        "url": "https://mxevent.herokuapp.com/guests"
-      }
-    ]
-  },
-  {
-    "type": "get",
     "url": "/guests/{id}",
     "title": "View guest details",
     "name": "ViewGuest",
@@ -2252,6 +2199,59 @@ define({ "api": [
     "sampleRequest": [
       {
         "url": "https://mxevent.herokuapp.com/guests/{id}"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/guests",
+    "title": "View guest details",
+    "name": "ViewGuest",
+    "group": "Guest",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ],
+        "Custom Response Header": [
+          {
+            "group": "Custom Response Header",
+            "type": "Number",
+            "optional": false,
+            "field": "X-mxEvent-profile-code",
+            "description": "<p>Status code about the profile.<br> 110: Indicates that the user with the authorization token as has been registered on the platform to another user role. But not as an event vendor. Also an HTTP Status of 204 is returned.<br> 120: Indicates the user has incomplete profile information an may require update.<br> 130: Indicated the user has a complete profile information.</p>"
+          },
+          {
+            "group": "Custom Response Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-mxEvent-profile-msg",
+            "description": "<p>Message.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "groupTitle": "Guest",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/guests"
       }
     ]
   },
@@ -3749,7 +3749,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/vendor",
+    "url": "/vendors",
     "title": "Create New Vendor",
     "name": "CreateVendor",
     "group": "Vendor",
@@ -3789,13 +3789,59 @@ define({ "api": [
     "groupTitle": "Vendor",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/vendor"
+        "url": "https://mxevent.herokuapp.com/vendors"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/vendors",
+    "title": "Create New Vendor",
+    "name": "CreateVendorReview",
+    "group": "Vendor",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "examples": [
+        {
+          "title": "Body:",
+          "content": "{\n    \"review\": \"review\",\n    \"title\": \"title\",\n    \"ratings\": \"7/10\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "{\n    \"id\": \"5aaf62b84ffaf87e05dada37\", // Review ID\n    \"reviewer\": {\n        \"id\": \"5aca794e7948b754ikm76y0\", //Planner who made this review ID\n        \"name\": \"Thanos Dione\",\n        \"phone\": \"+12345678909\",\n        \"email\": \"thanos.dione@gmail.com\"\n    },\n    \"review\": \"review\",\n    \"title\": \"title\",\n    \"ratings\": \"7/10\",\n    \"created\": \"\"\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/VendorController.java",
+    "groupTitle": "Vendor",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/vendors"
       }
     ]
   },
   {
     "type": "delete",
-    "url": "/vendor",
+    "url": "/vendors",
     "title": "Delete Vendor",
     "name": "DeleteVendor",
     "group": "Vendor",
@@ -3826,13 +3872,13 @@ define({ "api": [
     "groupTitle": "Vendor",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/vendor"
+        "url": "https://mxevent.herokuapp.com/vendors"
       }
     ]
   },
   {
-    "type": "post",
-    "url": "/vendor",
+    "type": "put",
+    "url": "/vendors",
     "title": "Update/Edit Vendor",
     "name": "UpdateVendor",
     "group": "Vendor",
@@ -3872,13 +3918,13 @@ define({ "api": [
     "groupTitle": "Vendor",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/vendor"
+        "url": "https://mxevent.herokuapp.com/vendors"
       }
     ]
   },
   {
     "type": "get",
-    "url": "/vendor",
+    "url": "/vendors/me",
     "title": "Get Vendor details",
     "name": "ViewVendor",
     "group": "Vendor",
@@ -3925,7 +3971,97 @@ define({ "api": [
     "groupTitle": "Vendor",
     "sampleRequest": [
       {
-        "url": "https://mxevent.herokuapp.com/vendor"
+        "url": "https://mxevent.herokuapp.com/vendors/me"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/vendors/{vendor_id}",
+    "title": "Get Vendor details",
+    "name": "ViewVendorByID",
+    "group": "Vendor",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ],
+        "Custom Response Header": [
+          {
+            "group": "Custom Response Header",
+            "type": "Number",
+            "optional": false,
+            "field": "X-mxEvent-profile-code",
+            "description": "<p>Status code about the profile.<br> 110: Indicates that the user with the authorization token as has been registered on the platform to another user role. But not as an event vendor. Also an HTTP Status of 204 is returned.<br> 120: Indicates the user has incomplete profile information an may require update.<br> 130: Indicated the user has a complete profile information.</p>"
+          },
+          {
+            "group": "Custom Response Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-mxEvent-profile-msg",
+            "description": "<p>Message.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "{\n     \"id\": \"5aaf62b84ffaf87e05dada37\",\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"vendor@example.com\"\n     \"phone\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\",\n     \"roles\": [\n         {\n             name: \"ROLE_USER\"\n         },\n         ...\n         {\n             name: \"ROLE_VENDOR\"\n         }\n     ],\n     \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/VendorController.java",
+    "groupTitle": "Vendor",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/vendors/{vendor_id}"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/vendors/{vendor_id}/review",
+    "title": "Get Vendor Review",
+    "name": "ViewVendorReview",
+    "group": "Vendor",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "[\n {\n     \"id\": \"5aaf62b84ffaf87e05dada37\", // Review ID\n     \"reviewer\": {\n         \"id\": \"5aca794e7948b754ikm76y0\",\n         \"name\": \"Thanos Dione\",\n         \"phone\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"review\": \"review\",\n     \"title\": \"title\",\n     \"ratings\": \"7/10\",\n     \"created\": \"\"\n\n },\n ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/VendorController.java",
+    "groupTitle": "Vendor",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/vendors/{vendor_id}/review"
       }
     ]
   }
