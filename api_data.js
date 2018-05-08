@@ -3796,7 +3796,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/vendors",
-    "title": "Create New Vendor",
+    "title": "Create Vendor Review",
     "name": "CreateVendorReview",
     "group": "Vendor",
     "header": {
@@ -3978,7 +3978,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/vendors/{vendor_id}",
-    "title": "Get Vendor details",
+    "title": "Get Vendor details by Id",
     "name": "ViewVendorByID",
     "group": "Vendor",
     "header": {
