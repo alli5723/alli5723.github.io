@@ -739,6 +739,96 @@
   },
   {
     "type": "get",
+    "url": "/events/{event_id}/gallery",
+    "title": "Create Gallery Entity",
+    "name": "GetGallery",
+    "group": "Events",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Path Variable": [
+          {
+            "group": "Path Variable",
+            "type": "String",
+            "optional": false,
+            "field": "event_id",
+            "description": "<p>Event unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "{\n    \"id\": \"9r8808ioujn98u80u8909ik\"\n    \"event\": {\n        \"id\": \"5acd58af2ac649498c5c4d86\",\n        \"name\": \"First Planned Event\",\n        \"details\": \"This is the first Event I inserted into the Database\"\n    },\n    \"images\": [\n        {\n            \"name\": \"Image Name\",\n            \"url\": \"Image url\"\n        },\n        ...\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AccessDenied",
+            "description": "<p>The current user with the authorization token doesn't have access to this endpoint.     *</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ResourceNotFound",
+            "description": "<p>The current item you are trying to access doesn't exist.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"type\": \"https://mxevent.herokuapp.com/problem/problem-with-message\",\n    \"title\": \"Forbidden\",\n    \"status\": 403,\n    \"detail\": \"Access is denied\",\n    \"path\": \"/events/{event_id}/gallery\",\n    \"message\": \"error.http.403\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n {\n     \"detail: \"New meal cannot already have an ID\"\n }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\n {\n     \"detail: \"Expired Token\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/EventController.java",
+    "groupTitle": "Events",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/events/{event_id}/gallery"
+      }
+    ]
+  },
+  {
+    "type": "get",
     "url": "/events/list",
     "title": "List all events",
     "name": "ListEvent",
@@ -2137,6 +2227,59 @@
   },
   {
     "type": "get",
+    "url": "/guests",
+    "title": "View guest details",
+    "name": "ViewGuest",
+    "group": "Guest",
+    "header": {
+      "fields": {
+        "Request Header": [
+          {
+            "group": "Request Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token from firebase authentication.</p>"
+          }
+        ],
+        "Custom Response Header": [
+          {
+            "group": "Custom Response Header",
+            "type": "Number",
+            "optional": false,
+            "field": "X-mxEvent-profile-code",
+            "description": "<p>Status code about the profile.<br> 110: Indicates that the user with the authorization token as has been registered on the platform to another user role. But not as an event vendor. Also an HTTP Status of 204 is returned.<br> 120: Indicates the user has incomplete profile information an may require update.<br> 130: Indicated the user has a complete profile information.</p>"
+          },
+          {
+            "group": "Custom Response Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-mxEvent-profile-msg",
+            "description": "<p>Message.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response:",
+          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
+    "groupTitle": "Guest",
+    "sampleRequest": [
+      {
+        "url": "https://mxevent.herokuapp.com/guests"
+      }
+    ]
+  },
+  {
+    "type": "get",
     "url": "/guests/{id}",
     "title": "View guest details",
     "name": "ViewGuest",
@@ -2199,59 +2342,6 @@
     "sampleRequest": [
       {
         "url": "https://mxevent.herokuapp.com/guests/{id}"
-      }
-    ]
-  },
-  {
-    "type": "get",
-    "url": "/guests",
-    "title": "View guest details",
-    "name": "ViewGuest",
-    "group": "Guest",
-    "header": {
-      "fields": {
-        "Request Header": [
-          {
-            "group": "Request Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>Authorization token from firebase authentication.</p>"
-          }
-        ],
-        "Custom Response Header": [
-          {
-            "group": "Custom Response Header",
-            "type": "Number",
-            "optional": false,
-            "field": "X-mxEvent-profile-code",
-            "description": "<p>Status code about the profile.<br> 110: Indicates that the user with the authorization token as has been registered on the platform to another user role. But not as an event vendor. Also an HTTP Status of 204 is returned.<br> 120: Indicates the user has incomplete profile information an may require update.<br> 130: Indicated the user has a complete profile information.</p>"
-          },
-          {
-            "group": "Custom Response Header",
-            "type": "String",
-            "optional": false,
-            "field": "X-mxEvent-profile-msg",
-            "description": "<p>Message.</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n }",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/main/java/com/mx/eventapi/web/rest/GuestController.java",
-    "groupTitle": "Guest",
-    "sampleRequest": [
-      {
-        "url": "https://mxevent.herokuapp.com/guests"
       }
     ]
   },
@@ -3796,7 +3886,7 @@
   {
     "type": "post",
     "url": "/vendors",
-    "title": "Create New Vendor",
+    "title": "Create Vendor Review",
     "name": "CreateVendorReview",
     "group": "Vendor",
     "header": {
@@ -3978,7 +4068,7 @@
   {
     "type": "get",
     "url": "/vendors/{vendor_id}",
-    "title": "Get Vendor details",
+    "title": "Get Vendor details by Id",
     "name": "ViewVendorByID",
     "group": "Vendor",
     "header": {
