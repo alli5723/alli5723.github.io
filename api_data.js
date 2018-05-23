@@ -415,7 +415,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phoneNumber\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phone\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
           "type": "json"
         }
       ]
@@ -911,7 +911,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "[\n {\n     \"id\": \"5a9af36690326a363e622402\",\n\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted and editted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phoneNumber\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n },\n ...\n {\n     \"id\": \"5a9af73990326a3743aa9f05\",\n\n     \"name\": \"Second Planned Event\",\n     \"details\": \"This is the second Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phoneNumber\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 1,\n     \"published\": 0,\n     \"maxInvite\": 100\n }\n]",
+          "content": "[\n {\n     \"id\": \"5a9af36690326a363e622402\",\n\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted and editted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phone\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n },\n ...\n {\n     \"id\": \"5a9af73990326a3743aa9f05\",\n\n     \"name\": \"Second Planned Event\",\n     \"details\": \"This is the second Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"locations\": [\n         {\n             \"id\": \"5aca7a297948b76868dde727\",\n             \"name\": \"Main Building\",\n             \"address\": \"20, Ulikooli Tn\",\n             \"extra\": \"extras\"\n         },\n         ...\n      ],\n     \"image\":{\n         \"name\": \"Image Name\",\n         \"url\": \"Image url\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phone\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"gifts\": [...],\n     \"programmes\": [...],\n     \"meals\": [...],\n     \"dressCodes\": [...],\n     \"open\": 1,\n     \"published\": 0,\n     \"maxInvite\": 100\n }\n]",
           "type": "json"
         }
       ]
@@ -997,7 +997,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "[\n     {\n         \"id\": \"5aaf62b84ffaf87e05dada37\",\n         \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\",\n         \"firstName\": \"first\",\n         \"lastName\": \"last\",\n         \"gcmToken\"\n         \"email\": \"planner@example.com\"\n         \"phoneNumber\" : \"+1234567890\",\n         \"roles\": [\n             {\n                 name: \"ROLE_USER\"\n             },\n             ...\n             {\n              name: \"ROLE_GUEST\"\n             }\n          ]\n     }\n     ...\n]",
+          "content": "[\n     {\n         \"id\": \"5aaf62b84ffaf87e05dada37\",\n         \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\",\n         \"firstName\": \"first\",\n         \"lastName\": \"last\",\n         \"gcmToken\"\n         \"email\": \"planner@example.com\"\n         \"phone\" : \"+1234567890\",\n         \"roles\": [\n             {\n                 name: \"ROLE_USER\"\n             },\n             ...\n             {\n              name: \"ROLE_GUEST\"\n             }\n          ]\n     }\n     ...\n]",
           "type": "json"
         }
       ]
@@ -1155,7 +1155,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n    \"id\": \"5aaa51764ffaf84b7438010f\",\n    \"guest\": {\n        \"id\": \"5acd2d2c70830d33e80f7478\",\n        \"name\": \"French Montana\",\n        \"phoneNumber\": \"+234098776352\",\n        \"email\": \"french.montana@gmail.com\"\n    },\n    \"event\": {\n        \"id\": \"5acd58af2ac649498c5c4d86\",\n        \"name\": \"First Planned Event\",\n        \"details\": \"This is the first Event I inserted into the Database\"\n    },\n    \"rsvp\": \"CHECKED_IN\"\n}",
+          "content": "{\n    \"id\": \"5aaa51764ffaf84b7438010f\",\n    \"guest\": {\n        \"id\": \"5acd2d2c70830d33e80f7478\",\n        \"name\": \"French Montana\",\n        \"phone\": \"+234098776352\",\n        \"email\": \"french.montana@gmail.com\"\n    },\n    \"event\": {\n        \"id\": \"5acd58af2ac649498c5c4d86\",\n        \"name\": \"First Planned Event\",\n        \"details\": \"This is the first Event I inserted into the Database\"\n    },\n    \"rsvp\": \"CHECKED_IN\"\n}",
           "type": "json"
         }
       ]
@@ -1206,7 +1206,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "[\n     {\n         \"id\": \"5aaf62b84ffaf87e05dada37\",\n         \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\",\n         \"firstName\": \"first\",\n         \"lastName\": \"last\",\n         \"email\": \"planner@example.com\"\n         \"phoneNumber\" : \"+1234567890\",\n         \"roles\": [\n             {\n                 name: \"ROLE_USER\"\n             },\n             ...\n             {\n              name: \"ROLE_GUEST\"\n             }\n          ]\n     }\n     ...\n]",
+          "content": "[\n     {\n         \"id\": \"5aaf62b84ffaf87e05dada37\",\n         \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\",\n         \"firstName\": \"first\",\n         \"lastName\": \"last\",\n         \"email\": \"planner@example.com\"\n         \"phone\" : \"+1234567890\",\n         \"roles\": [\n             {\n                 name: \"ROLE_USER\"\n             },\n             ...\n             {\n              name: \"ROLE_GUEST\"\n             }\n          ]\n     }\n     ...\n]",
           "type": "json"
         }
       ]
@@ -1257,7 +1257,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"location\": {\n         \"id\": \"5aca7a297948b76868dde727\",\n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n         \"extra\": \"extras\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phoneNumber\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"location\": {\n         \"id\": \"5aca7a297948b76868dde727\",\n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n         \"extra\": \"extras\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phone\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
           "type": "json"
         }
       ]
@@ -1648,7 +1648,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n    \"firstName\": \"New\",\n    \"lastName\": \"York\",\n    \"phoneNumber\": \"56781061\"\n}",
+          "content": "{\n    \"firstName\": \"New\",\n    \"lastName\": \"York\",\n    \"phone\": \"56781061\"\n}",
           "type": "json"
         }
       ]
@@ -1657,7 +1657,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n      \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\"\n }",
+          "content": "{\n      \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phone\": \"56781061\",\n     \"email\": \"olamide@gmail.com\"\n }",
           "type": "json"
         }
       ]
@@ -1941,7 +1941,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "\n{\n    \"id\": \"5acd6a112ac649312037137f\",\n    \"guest\": {\n        \"id\": \"5acd5fbf2ac6493120371379\",\n        \"name\": \"Barry Allen\",\n        \"phoneNumber\": \"+123456789093\",\n        \"email\": \"barry.allen@gmail.com\"\n    },\n    \"event\": {\n        \"id\": \"5acd58af2ac649498c5c4d86\",\n        \"name\": \"First Planned Event\",\n        \"details\": \"This is the first Event I inserted into the Database\"\n    },\n    \"gifts\":[\n        {\n            \"id\": \"5aaa41c8b854660004011b60\",\n            \"giftName\": \"New Image Name\",\n            \"giftUrl\": \"New Image url\"\n        },\n        ...\n    ],\n    \"meals\": [\n        {\n            \"id\": \"5aaa41c8bwefffffd3434344\",\n            \"type\": \"type1\",\n            \"meal_name\": \"name1\",\n            \"interest\": \"interest1\"\n        },\n        ...\n    ],\n    \"rsvp\": \"YES\"\n}",
+          "content": "\n{\n    \"id\": \"5acd6a112ac649312037137f\",\n    \"guest\": {\n        \"id\": \"5acd5fbf2ac6493120371379\",\n        \"name\": \"Barry Allen\",\n        \"phone\": \"+123456789093\",\n        \"email\": \"barry.allen@gmail.com\"\n    },\n    \"event\": {\n        \"id\": \"5acd58af2ac649498c5c4d86\",\n        \"name\": \"First Planned Event\",\n        \"details\": \"This is the first Event I inserted into the Database\"\n    },\n    \"gifts\":[\n        {\n            \"id\": \"5aaa41c8b854660004011b60\",\n            \"giftName\": \"New Image Name\",\n            \"giftUrl\": \"New Image url\"\n        },\n        ...\n    ],\n    \"meals\": [\n        {\n            \"id\": \"5aaa41c8bwefffffd3434344\",\n            \"type\": \"type1\",\n            \"meal_name\": \"name1\",\n            \"interest\": \"interest1\"\n        },\n        ...\n    ],\n    \"rsvp\": \"YES\"\n}",
           "type": "json"
         }
       ]
@@ -2027,7 +2027,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"location\": {\n         \"id\": \"5aca7a297948b76868dde727\",\n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n         \"extra\": \"extras\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phoneNumber\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
+          "content": "{\n     \"id\": \"5aaa41c8b854660004011b60\",\n     \"name\": \"First Planned Event\",\n     \"details\": \"This is the first Event I inserted into the Database\",\n     \"date\": \"2018-12-01\",,\n     \"location\": {\n         \"id\": \"5aca7a297948b76868dde727\",\n         \"name\": \"Main Building\",\n         \"address\": \"20, Ulikooli Tn\",\n         \"extra\": \"extras\"\n     },\n     \"creator\": {\n         \"id\": \"5aca794e7948b754ace854fa\",\n         \"name\": \"Thanos Dione\",\n         \"phone\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"open\": 0,\n     \"published\": 0,\n     \"maxInvite\": 100\n }",
           "type": "json"
         }
       ]
@@ -2092,7 +2092,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "\n{\n    \"id\": \"5acd6a112ac649312037137f\",\n    \"guest\": {\n        \"id\": \"5acd5fbf2ac6493120371379\",\n        \"name\": \"Barry Allen\",\n        \"phoneNumber\": \"+123456789093\",\n        \"email\": \"barry.allen@gmail.com\"\n    },\n    \"event\": {\n        \"id\": \"5acd58af2ac649498c5c4d86\",\n        \"name\": \"First Planned Event\",\n        \"details\": \"This is the first Event I inserted into the Database\"\n    },\n    \"gifts\": [\n        {\n            \"id\": \"5aaa41c8b854660004011b60\",\n            \"giftName\": \"New Image Name\",\n            \"giftUrl\": \"New Image url\"\n        },\n        ...\n    ],\n    \"meals\": [\n        {\n            \"id\": \"5aaa41c8bwefffffd3434344\",\n            \"type\": \"type0\",\n            \"meal_name\": \"name0\",\n            \"interest\": \"interest0\"\n        },\n        ...\n    ],\n    \"rsvp\": \"YES\"\n}",
+          "content": "\n{\n    \"id\": \"5acd6a112ac649312037137f\",\n    \"guest\": {\n        \"id\": \"5acd5fbf2ac6493120371379\",\n        \"name\": \"Barry Allen\",\n        \"phone\": \"+123456789093\",\n        \"email\": \"barry.allen@gmail.com\"\n    },\n    \"event\": {\n        \"id\": \"5acd58af2ac649498c5c4d86\",\n        \"name\": \"First Planned Event\",\n        \"details\": \"This is the first Event I inserted into the Database\"\n    },\n    \"gifts\": [\n        {\n            \"id\": \"5aaa41c8b854660004011b60\",\n            \"giftName\": \"New Image Name\",\n            \"giftUrl\": \"New Image url\"\n        },\n        ...\n    ],\n    \"meals\": [\n        {\n            \"id\": \"5aaa41c8bwefffffd3434344\",\n            \"type\": \"type0\",\n            \"meal_name\": \"name0\",\n            \"interest\": \"interest0\"\n        },\n        ...\n    ],\n    \"rsvp\": \"YES\"\n}",
           "type": "json"
         }
       ]
@@ -2165,7 +2165,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "[\n     {\n         \"id\": \"5acd6a112ac649312037137d\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phoneNumber\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-0\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \"rsvp\": \"NO\"\n      },\n      {\n         \"id\": \"5acd6a112ac649312037137e\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phoneNumber\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-2\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \"rsvp\": \"NO\"\n     },\n     {\n         \"id\": \"5acd6a112ac649312037137f\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phoneNumber\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-1\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \"rsvp\": \"NO\"\n     }\n]",
+          "content": "[\n     {\n         \"id\": \"5acd6a112ac649312037137d\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phone\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-0\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \"rsvp\": \"NO\"\n      },\n      {\n         \"id\": \"5acd6a112ac649312037137e\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phone\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-2\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \"rsvp\": \"NO\"\n     },\n     {\n         \"id\": \"5acd6a112ac649312037137f\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phone\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-1\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \"rsvp\": \"NO\"\n     }\n]",
           "type": "json"
         }
       ]
@@ -2202,7 +2202,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n    \"firstName\": \"New\",\n    \"lastName\": \"York\",\n    \"phoneNumber\": \"56781061\",\n    \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n}",
+          "content": "{\n    \"firstName\": \"New\",\n    \"lastName\": \"York\",\n    \"phone\": \"56781061\",\n    \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n}",
           "type": "json"
         }
       ]
@@ -2211,7 +2211,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n}",
+          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phone\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n}",
           "type": "json"
         }
       ]
@@ -2264,7 +2264,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n }",
+          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phone\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n }",
           "type": "json"
         }
       ]
@@ -2331,7 +2331,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phoneNumber\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n }",
+          "content": "{\n     \"id\": \"5aaa4795b854660004011b61\",\n     \"firstName\": \"New\",\n     \"lastName\": \"York\",\n     \"phone\": \"56781061\",\n     \"email\": \"olamide@gmail.com\",\n     \"gcmToken\": \"kmlsjdvy7809890.mny7uy89....\"\n }",
           "type": "json"
         }
       ]
@@ -2403,7 +2403,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Body:",
-          "content": "[\n     {\n         \"name\": \"French Montana\",\n         \"phoneNumber\": \"+234098776352\",\n         \"email\": \"french.montana@gmail.com\"\n     },\n     {\n         \"name\": \"Frank Castle\",\n         \"phoneNumber\": \"+2348176543289\",\n         \"email\": \"frank.castle@gmail.com\"\n     },\n     {\n         \"name\": \"Barry Allen\",\n         \"phoneNumber\": \"+123456789093\",\n         \"email\": \"barry.allen@gmail.com\"\n     }\n ]",
+          "content": "[\n     {\n         \"name\": \"French Montana\",\n         \"phone\": \"+234098776352\",\n         \"email\": \"french.montana@gmail.com\"\n     },\n     {\n         \"name\": \"Frank Castle\",\n         \"phone\": \"+2348176543289\",\n         \"email\": \"frank.castle@gmail.com\"\n     },\n     {\n         \"name\": \"Barry Allen\",\n         \"phone\": \"+123456789093\",\n         \"email\": \"barry.allen@gmail.com\"\n     }\n ]",
           "type": "json"
         }
       ]
@@ -2412,7 +2412,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "[\n     {\n         \"id\": \"5acd6a112ac649312037137d\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phoneNumber\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n      },\n      {\n         \"id\": \"5acd6a112ac649312037137e\",\n         \"guest\": {\n             \"id\": \"5acd57492ac649498c5c4d82\",\n             \"name\": \"Frank Castle\",\n             \"phoneNumber\": \"+2348176543289\",\n             \"email\": \"frank.castle@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     },\n     {\n         \"id\": \"5acd6a112ac649312037137f\",\n         \"guest\": {\n             \"id\": \"5acd5fbf2ac6493120371379\",\n             \"name\": \"Barry Allen\",\n             \"phoneNumber\": \"+123456789093\",\n             \"email\": \"barry.allen@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     }\n]",
+          "content": "[\n     {\n         \"id\": \"5acd6a112ac649312037137d\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phone\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n      },\n      {\n         \"id\": \"5acd6a112ac649312037137e\",\n         \"guest\": {\n             \"id\": \"5acd57492ac649498c5c4d82\",\n             \"name\": \"Frank Castle\",\n             \"phone\": \"+2348176543289\",\n             \"email\": \"frank.castle@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     },\n     {\n         \"id\": \"5acd6a112ac649312037137f\",\n         \"guest\": {\n             \"id\": \"5acd5fbf2ac6493120371379\",\n             \"name\": \"Barry Allen\",\n             \"phone\": \"+123456789093\",\n             \"email\": \"barry.allen@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     }\n]",
           "type": "json"
         }
       ]
@@ -2525,7 +2525,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n     \"id\": \"5acd6a112ac649312037137d\" //important\n     \"name\": \"French Montana\",\n     \"phoneNumber\": \"+234098776352\",\n     \"email\": \"french.montana@gmail.com\"\n}",
+          "content": "{\n     \"id\": \"5acd6a112ac649312037137d\" //important\n     \"name\": \"French Montana\",\n     \"phone\": \"+234098776352\",\n     \"email\": \"french.montana@gmail.com\"\n}",
           "type": "json"
         }
       ]
@@ -2606,7 +2606,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "\n[\n     {\n         \"id\": \"5acd6a112ac649312037137d\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phoneNumber\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-0\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n      },\n      {\n         \"id\": \"5acd6a112ac649312037137e\",\n         \"guest\": {\n             \"id\": \"5acd57492ac649498c5c4d82\",\n             \"name\": \"Frank Castle\",\n             \"phoneNumber\": \"+2348176543289\",\n             \"email\": \"frank.castle@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-2\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     },\n     {\n         \"id\": \"5acd6a112ac649312037137f\",\n         \"guest\": {\n             \"id\": \"5acd5fbf2ac6493120371379\",\n             \"name\": \"Barry Allen\",\n             \"phoneNumber\": \"+123456789093\",\n             \"email\": \"barry.allen@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-1\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     }\n]",
+          "content": "\n[\n     {\n         \"id\": \"5acd6a112ac649312037137d\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phone\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-0\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n      },\n      {\n         \"id\": \"5acd6a112ac649312037137e\",\n         \"guest\": {\n             \"id\": \"5acd57492ac649498c5c4d82\",\n             \"name\": \"Frank Castle\",\n             \"phone\": \"+2348176543289\",\n             \"email\": \"frank.castle@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-2\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     },\n     {\n         \"id\": \"5acd6a112ac649312037137f\",\n         \"guest\": {\n             \"id\": \"5acd5fbf2ac6493120371379\",\n             \"name\": \"Barry Allen\",\n             \"phone\": \"+123456789093\",\n             \"email\": \"barry.allen@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"event-1\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     }\n]",
           "type": "json"
         }
       ]
@@ -2678,7 +2678,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "[\n     {\n         \"id\": \"5acd6a112ac649312037137d\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phoneNumber\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n      },\n      {\n         \"id\": \"5acd6a112ac649312037137e\",\n         \"guest\": {\n             \"id\": \"5acd57492ac649498c5c4d82\",\n             \"name\": \"Frank Castle\",\n             \"phoneNumber\": \"+2348176543289\",\n             \"email\": \"frank.castle@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     },\n     {\n         \"id\": \"5acd6a112ac649312037137f\",\n         \"guest\": {\n             \"id\": \"5acd5fbf2ac6493120371379\",\n             \"name\": \"Barry Allen\",\n             \"phoneNumber\": \"+123456789093\",\n             \"email\": \"barry.allen@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     }\n]",
+          "content": "[\n     {\n         \"id\": \"5acd6a112ac649312037137d\",\n         \"guest\": {\n             \"id\": \"5acd2d2c70830d33e80f7478\",\n             \"name\": \"French Montana\",\n             \"phone\": \"+234098776352\",\n             \"email\": \"french.montana@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n      },\n      {\n         \"id\": \"5acd6a112ac649312037137e\",\n         \"guest\": {\n             \"id\": \"5acd57492ac649498c5c4d82\",\n             \"name\": \"Frank Castle\",\n             \"phone\": \"+2348176543289\",\n             \"email\": \"frank.castle@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     },\n     {\n         \"id\": \"5acd6a112ac649312037137f\",\n         \"guest\": {\n             \"id\": \"5acd5fbf2ac6493120371379\",\n             \"name\": \"Barry Allen\",\n             \"phone\": \"+123456789093\",\n             \"email\": \"barry.allen@gmail.com\"\n         },\n         \"event\": {\n             \"id\": \"5acd58af2ac649498c5c4d86\",\n             \"name\": \"First Planned Event\",\n             \"details\": \"This is the first Event I inserted into the Database\"\n         },\n         \n         \"rsvp\": \"NO\"\n     }\n]",
           "type": "json"
         }
       ]
@@ -2778,7 +2778,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "<p>\n{\n\"id\": \"5aaa51764ffaf84b7438010f\",\n\"guest\": {\n\"id\": \"5acd2d2c70830d33e80f7478\",\n\"name\": \"French Montana\",\n\"phoneNumber\": \"+234098776352\",\n\"email\": \"french.montana@gmail.com\"\n},\n\"event\": {\n\"id\": \"5acd58af2ac649498c5c4d86\",\n\"name\": \"First Planned Event\",\n\"details\": \"This is the first Event I inserted into the Database\"\n},\n<p>\n\"rsvp\": \"MAYBE\"\n}",
+          "content": "<p>\n{\n\"id\": \"5aaa51764ffaf84b7438010f\",\n\"guest\": {\n\"id\": \"5acd2d2c70830d33e80f7478\",\n\"name\": \"French Montana\",\n\"phone\": \"+234098776352\",\n\"email\": \"french.montana@gmail.com\"\n},\n\"event\": {\n\"id\": \"5acd58af2ac649498c5c4d86\",\n\"name\": \"First Planned Event\",\n\"details\": \"This is the first Event I inserted into the Database\"\n},\n<p>\n\"rsvp\": \"MAYBE\"\n}",
           "type": "json"
         }
       ]
@@ -2857,7 +2857,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n     \"id\": \"5acd6a112ac649312037137d\"\n     \"name\": \"French Montana\",\n     \"phoneNumber\": \"+234098776352\",\n     \"email\": \"french.montana@gmail.com\"\n}",
+          "content": "{\n     \"id\": \"5acd6a112ac649312037137d\"\n     \"name\": \"French Montana\",\n     \"phone\": \"+234098776352\",\n     \"email\": \"french.montana@gmail.com\"\n}",
           "type": "json"
         }
       ]
@@ -2866,7 +2866,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "\n{\n     \"id\": \"5acd6a112ac649312037137d\",\n     \"guest\": {\n         \"id\": \"5acd2d2c70830d33e80f7478\",\n         \"name\": \"French Montana\",\n         \"phoneNumber\": \"+234098776352\",\n         \"email\": \"french.montana@gmail.com\"\n     },\n      \"event\": {\n         \"id\": \"5acd58af2ac649498c5c4d86\",\n         \"name\": \"First Planned Event\",\n         \"details\": \"This is the first Event I inserted into the Database\"\n     },\n     \n     \"rsvp\": \"NO\"\n}",
+          "content": "\n{\n     \"id\": \"5acd6a112ac649312037137d\",\n     \"guest\": {\n         \"id\": \"5acd2d2c70830d33e80f7478\",\n         \"name\": \"French Montana\",\n         \"phone\": \"+234098776352\",\n         \"email\": \"french.montana@gmail.com\"\n     },\n      \"event\": {\n         \"id\": \"5acd58af2ac649498c5c4d86\",\n         \"name\": \"First Planned Event\",\n         \"details\": \"This is the first Event I inserted into the Database\"\n     },\n     \n     \"rsvp\": \"NO\"\n}",
           "type": "json"
         }
       ]
@@ -3299,7 +3299,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n    \"firstName\": \"first\",\n    \"lastName\": \"last\",\n    \"email\": \"planner@example.com\"\n    \"phoneNumber\" : \"+1234567890\",\n    \"description\" : \"Description\",\n    \"address\" : \"Company Address\",\n    \"companyName\" : \"Company Name\",\n    \"dob\" : \"31-12-1990\",\n    \"sex\" : \"F\"\n}",
+          "content": "{\n    \"firstName\": \"first\",\n    \"lastName\": \"last\",\n    \"email\": \"planner@example.com\"\n    \"phone\" : \"+1234567890\",\n    \"description\" : \"Description\",\n    \"address\" : \"Company Address\",\n    \"companyName\" : \"Company Name\",\n    \"dob\" : \"31-12-1990\",\n    \"sex\" : \"F\"\n}",
           "type": "json"
         }
       ]
@@ -3308,7 +3308,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaf62b84ffaf87e05dada37\",\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"planner@example.com\"\n     \"phoneNumber\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\",\n     \"roles\": [\n         {\n             name: \"ROLE_USER\"\n         },\n         ....\n         {\n             name: \"ROLE_PLANNER\"\n         }\n     ],\n     \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
+          "content": "{\n     \"id\": \"5aaf62b84ffaf87e05dada37\",\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"planner@example.com\"\n     \"phone\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\",\n     \"roles\": [\n         {\n             name: \"ROLE_USER\"\n         },\n         ....\n         {\n             name: \"ROLE_PLANNER\"\n         }\n     ],\n     \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
           "type": "json"
         }
       ]
@@ -3400,7 +3400,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"planner@example.com\"\n     \"phoneNumber\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\"\n}",
+          "content": "{\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"planner@example.com\"\n     \"phone\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\"\n}",
           "type": "json"
         }
       ]
@@ -3409,7 +3409,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaf62b84ffaf87e05dada37\",\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"planner@example.com\"\n     \"phoneNumber\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\",\n     \"roles\": [\n         {\n             name: \"ROLE_USER\"\n         },\n         ...\n         {\n             name: \"ROLE_PLANNER\"\n         }\n     ],\n     \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
+          "content": "{\n     \"id\": \"5aaf62b84ffaf87e05dada37\",\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"planner@example.com\"\n     \"phone\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\",\n     \"roles\": [\n         {\n             name: \"ROLE_USER\"\n         },\n         ...\n         {\n             name: \"ROLE_PLANNER\"\n         }\n     ],\n     \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
           "type": "json"
         }
       ]
@@ -3462,7 +3462,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n\"id\": \"5aaf62b84ffaf87e05dada37\",\n\"firstName\": \"first\",\n\"lastName\": \"last\",\n\"email\": \"planner@example.com\"\n\"phoneNumber\" : \"+1234567890\",\n\"description\" : \"Description\",\n\"address\" : \"Company Address\",\n\"companyName\" : \"Company Name\",\n\"dob\" : \"31-12-1990\",\n\"sex\" : \"F\",\n\"roles\": [\n{\nname: \"ROLE_USER\"\n},\n....\n{\nname: \"ROLE_PLANNER\"\n}\n],\n\"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
+          "content": "{\n\"id\": \"5aaf62b84ffaf87e05dada37\",\n\"firstName\": \"first\",\n\"lastName\": \"last\",\n\"email\": \"planner@example.com\"\n\"phone\" : \"+1234567890\",\n\"description\" : \"Description\",\n\"address\" : \"Company Address\",\n\"companyName\" : \"Company Name\",\n\"dob\" : \"31-12-1990\",\n\"sex\" : \"F\",\n\"roles\": [\n{\nname: \"ROLE_USER\"\n},\n....\n{\nname: \"ROLE_PLANNER\"\n}\n],\n\"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
           "type": "json"
         }
       ]
@@ -3860,7 +3860,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n    \"firstName\": \"first\",\n    \"lastName\": \"last\",\n    \"email\": \"vendor@example.com\"\n    \"phoneNumber\" : \"+1234567890\",\n    \"description\" : \"Description\",\n    \"address\" : \"Company Address\",\n    \"companyName\" : \"Company Name\",\n    \"dob\" : \"31-12-1990\",\n    \"sex\" : \"F\"\n}",
+          "content": "{\n    \"firstName\": \"first\",\n    \"lastName\": \"last\",\n    \"email\": \"vendor@example.com\"\n    \"phone\" : \"+1234567890\",\n    \"description\" : \"Description\",\n    \"address\" : \"Company Address\",\n    \"companyName\" : \"Company Name\",\n    \"dob\" : \"31-12-1990\",\n    \"sex\" : \"F\"\n}",
           "type": "json"
         }
       ]
@@ -3869,7 +3869,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n    \"id\": \"5aaf62b84ffaf87e05dada37\",\n    \"firstName\": \"first\",\n    \"lastName\": \"last\",\n    \"email\": \"vendor@example.com\"\n    \"phoneNumber\" : \"+1234567890\",\n    \"description\" : \"Description\",\n    \"address\" : \"Company Address\",\n    \"companyName\" : \"Company Name\",\n    \"dob\" : \"31-12-1990\",\n    \"sex\" : \"F\",\n    \"roles\": [\n        {\n            name: \"ROLE_USER\"\n        },\n        ....\n        {\n             name: \"ROLE_PLANNER\"\n        }\n    ],\n    \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
+          "content": "{\n    \"id\": \"5aaf62b84ffaf87e05dada37\",\n    \"firstName\": \"first\",\n    \"lastName\": \"last\",\n    \"email\": \"vendor@example.com\"\n    \"phone\" : \"+1234567890\",\n    \"description\" : \"Description\",\n    \"address\" : \"Company Address\",\n    \"companyName\" : \"Company Name\",\n    \"dob\" : \"31-12-1990\",\n    \"sex\" : \"F\",\n    \"roles\": [\n        {\n            name: \"ROLE_USER\"\n        },\n        ....\n        {\n             name: \"ROLE_PLANNER\"\n        }\n    ],\n    \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
           "type": "json"
         }
       ]
@@ -3915,7 +3915,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n    \"id\": \"5aaf62b84ffaf87e05dada37\", // Review ID\n    \"reviewer\": {\n        \"id\": \"5aca794e7948b754ikm76y0\", //Planner who made this review ID\n        \"name\": \"Thanos Dione\",\n        \"phoneNumber\": \"+12345678909\",\n        \"email\": \"thanos.dione@gmail.com\"\n    },\n    \"review\": \"review\",\n    \"title\": \"title\",\n    \"ratings\": \"7/10\",\n    \"created\": \"\"\n\n}",
+          "content": "{\n    \"id\": \"5aaf62b84ffaf87e05dada37\", // Review ID\n    \"reviewer\": {\n        \"id\": \"5aca794e7948b754ikm76y0\", //Planner who made this review ID\n        \"name\": \"Thanos Dione\",\n        \"phone\": \"+12345678909\",\n        \"email\": \"thanos.dione@gmail.com\"\n    },\n    \"review\": \"review\",\n    \"title\": \"title\",\n    \"ratings\": \"7/10\",\n    \"created\": \"\"\n\n}",
           "type": "json"
         }
       ]
@@ -3989,7 +3989,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Body:",
-          "content": "{\n    \"firstName\": \"first\",\n    \"lastName\": \"last\",\n    \"email\": \"vendor@example.com\"\n    \"phoneNumber\" : \"+1234567890\",\n    \"description\" : \"Description\",\n    \"address\" : \"Company Address\",\n    \"companyName\" : \"Company Name\",\n    \"dob\" : \"31-12-1990\",\n    \"sex\" : \"F\"\n}",
+          "content": "{\n    \"firstName\": \"first\",\n    \"lastName\": \"last\",\n    \"email\": \"vendor@example.com\"\n    \"phone\" : \"+1234567890\",\n    \"description\" : \"Description\",\n    \"address\" : \"Company Address\",\n    \"companyName\" : \"Company Name\",\n    \"dob\" : \"31-12-1990\",\n    \"sex\" : \"F\"\n}",
           "type": "json"
         }
       ]
@@ -3998,7 +3998,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n    \"id\": \"5aaf62b84ffaf87e05dada37\",\n    \"firstName\": \"first\",\n    \"lastName\": \"last\",\n    \"email\": \"vendor@example.com\"\n    \"phoneNumber\" : \"+1234567890\",\n    \"description\" : \"Description\",\n    \"address\" : \"Company Address\",\n    \"companyName\" : \"Company Name\",\n    \"dob\" : \"31-12-1990\",\n    \"sex\" : \"F\",\n    \"roles\": [\n        {\n            name: \"ROLE_USER\"\n        },\n        ....\n        {\n            name: \"ROLE_VENDOR\"\n        }\n    ],\n    \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
+          "content": "{\n    \"id\": \"5aaf62b84ffaf87e05dada37\",\n    \"firstName\": \"first\",\n    \"lastName\": \"last\",\n    \"email\": \"vendor@example.com\"\n    \"phone\" : \"+1234567890\",\n    \"description\" : \"Description\",\n    \"address\" : \"Company Address\",\n    \"companyName\" : \"Company Name\",\n    \"dob\" : \"31-12-1990\",\n    \"sex\" : \"F\",\n    \"roles\": [\n        {\n            name: \"ROLE_USER\"\n        },\n        ....\n        {\n            name: \"ROLE_VENDOR\"\n        }\n    ],\n    \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
           "type": "json"
         }
       ]
@@ -4051,7 +4051,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaf62b84ffaf87e05dada37\",\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"vendor@example.com\"\n     \"phoneNumber\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\",\n     \"roles\": [\n         {\n             name: \"ROLE_USER\"\n         },\n         ...\n         {\n             name: \"ROLE_VENDOR\"\n         }\n     ],\n     \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
+          "content": "{\n     \"id\": \"5aaf62b84ffaf87e05dada37\",\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"vendor@example.com\"\n     \"phone\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\",\n     \"roles\": [\n         {\n             name: \"ROLE_USER\"\n         },\n         ...\n         {\n             name: \"ROLE_VENDOR\"\n         }\n     ],\n     \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
           "type": "json"
         }
       ]
@@ -4104,7 +4104,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "{\n     \"id\": \"5aaf62b84ffaf87e05dada37\",\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"vendor@example.com\"\n     \"phoneNumber\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\",\n     \"roles\": [\n         {\n             name: \"ROLE_USER\"\n         },\n         ...\n         {\n             name: \"ROLE_VENDOR\"\n         }\n     ],\n     \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
+          "content": "{\n     \"id\": \"5aaf62b84ffaf87e05dada37\",\n     \"firstName\": \"first\",\n     \"lastName\": \"last\",\n     \"email\": \"vendor@example.com\"\n     \"phone\" : \"+1234567890\",\n     \"description\" : \"Description\",\n     \"address\" : \"Company Address\",\n     \"companyName\" : \"Company Name\",\n     \"dob\" : \"31-12-1990\",\n     \"sex\" : \"F\",\n     \"roles\": [\n         {\n             name: \"ROLE_USER\"\n         },\n         ...\n         {\n             name: \"ROLE_VENDOR\"\n         }\n     ],\n     \"uid\": \"sYvbbH1Ia7bhzXDAaFZZ3kHQdryA\"\n}",
           "type": "json"
         }
       ]
@@ -4141,7 +4141,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response:",
-          "content": "[\n {\n     \"id\": \"5aaf62b84ffaf87e05dada37\", // Review ID\n     \"reviewer\": {\n         \"id\": \"5aca794e7948b754ikm76y0\",\n         \"name\": \"Thanos Dione\",\n         \"phoneNumber\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"review\": \"review\",\n     \"title\": \"title\",\n     \"ratings\": \"7/10\",\n     \"created\": \"\"\n\n },\n ...\n]",
+          "content": "[\n {\n     \"id\": \"5aaf62b84ffaf87e05dada37\", // Review ID\n     \"reviewer\": {\n         \"id\": \"5aca794e7948b754ikm76y0\",\n         \"name\": \"Thanos Dione\",\n         \"phone\": \"+12345678909\",\n         \"email\": \"thanos.dione@gmail.com\"\n     },\n     \"review\": \"review\",\n     \"title\": \"title\",\n     \"ratings\": \"7/10\",\n     \"created\": \"\"\n\n },\n ...\n]",
           "type": "json"
         }
       ]
